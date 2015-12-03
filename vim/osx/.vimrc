@@ -35,3 +35,6 @@ filetype indent plugin on
 syntax enable
 set background=dark
 colorscheme solarized
+
+inoremap jk <ESC>
+set encoding=utf-8
