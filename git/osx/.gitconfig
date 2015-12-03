@@ -1,0 +1,20 @@
+[user]
+	name = Brian Lachniet
+	email = blachniet@gmail.com
+	
+[core]
+	editor = /usr/bin/vim
+
+[alias]
+	gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
+	s = status --short
+	co = checkout
+	b = branch
+	lo = log --oneline --decorate --graph
+	diffy = difftool --dir-diff -y
+
+[push]
+	default = simple
+
+[merge]
+	tool = vimdiff2
