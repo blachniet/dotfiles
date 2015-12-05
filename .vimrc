@@ -2,6 +2,11 @@
 set nocompatible              " be iMproved, required
 set number
 set backspace=indent,eol,start
+set showmatch
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 
 " Key mappings
 nnoremap ; :
