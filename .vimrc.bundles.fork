@@ -1,8 +1,0 @@
-" Removed:
-"   - neocomplete
-"   - ruby
-"   - php
-" Added:
-"   - go
-"   - youcompleteme
-let g:spf13_bundle_groups=['general', 'writing', 'programming', 'python', 'javascript', 'html', 'misc', 'go', 'youcompleteme']
