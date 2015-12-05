@@ -145,9 +145,11 @@ print_success() {
 
 declare -a FILES_TO_SYMLINK=(
 
-	'.bash_profile'
-	'.gitconfig'
-	'.vimrc'
+    '.bash_profile'
+    '.gitconfig'
+    '.vimrc.before.fork'
+    '.vimrc.bundles.fork'
+    '.vimrc.fork'
 
 )
 
