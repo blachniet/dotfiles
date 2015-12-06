@@ -3,6 +3,9 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
+# Aliases
+alias dockerm=docker-machine
+
 # Go
 export GOPATH=$HOME/Developer/go
 export PATH=$PATH:$GOPATH/bin
