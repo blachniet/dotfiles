@@ -150,6 +150,7 @@ declare -a FILES_TO_SYMLINK=(
     '.vimrc.before.fork'
     '.vimrc.bundles.fork'
     '.vimrc.fork'
+    '.inputrc'
 
 )
 
