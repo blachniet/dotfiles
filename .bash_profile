@@ -4,7 +4,11 @@ done
 unset file
 
 # Aliases
+alias dockerc=docker-compose
 alias dockerm=docker-machine
+
+# Path
+export PATH=$PATH:$HOME/bin
 
 # Go
 export GOPATH=$HOME/Developer/go
