@@ -172,6 +172,8 @@ declare -a FILES_TO_SYMLINK=(
     '.bash_profile'
     '.bashrc'
     '.gitconfig'
+    '.git-completion.bash'
+    '.git-prompt.sh'
     '.vimrc.before.fork'
     '.vimrc.bundles.fork'
     '.vimrc.fork'

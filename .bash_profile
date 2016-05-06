@@ -10,6 +10,15 @@ alias dockerm=docker-machine
 # Path
 export PATH=$PATH:$HOME/bin
 
+# Git
+. $HOME/.git-completion.bash
+. $HOME/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWCOLORHINTS=1
+#PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+PROMPT_COMMAND='__git_ps1 "\u@\h:\W" "\\\$ "'
+
 # Go
 export GOPATH=$HOME/Developer/go
 export PATH=$PATH:$GOPATH/bin
