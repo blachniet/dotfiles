@@ -12,8 +12,11 @@ On Ubuntu, set terminal color scheme to Solarized: *Edit > Profile Preferences >
 
 ## vim
 
-Requires vim with lua support:
+Install vim with lua support
+
     # Ubuntu
     sudo apt-get install vim-gnome
+
     # Mac
     brew install vim --with-lua
+    brew install macvim --with-cscope --with-lua
