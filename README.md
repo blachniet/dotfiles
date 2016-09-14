@@ -2,6 +2,7 @@
 
     $ cd ~/
     $ git clone https://github.com/blachniet/dotfiles.git
+    $ cd dotfiles/
     $ stow bash
     $ stow git
 
