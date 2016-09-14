@@ -10,6 +10,9 @@
 
 On Ubuntu, set terminal color scheme to Solarized: *Edit > Profile Preferences > Colors > Built-in schemes*
 
+On Mac, install appropriate [Solarized color scheme](http://ethanschoonover.com/solarized) for terminal.
+
+
 ## vim
 
 Install vim with lua support
