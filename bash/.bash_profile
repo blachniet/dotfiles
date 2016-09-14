@@ -27,7 +27,7 @@ export GIT_PS1_SHOWCOLORHINTS=1
 PROMPT_COMMAND='__git_ps1 "\u@\h:\W" "\\\$ "'
 
 # Go
-export GOPATH=$HOME/code/go
+export GOPATH=$HOME/Developer/go
 export PATH=$PATH:$GOPATH/bin
 
 # virtualenvwrapper
