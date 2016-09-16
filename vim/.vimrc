@@ -30,9 +30,10 @@ set ruler			" Display cursor position on last line of screen
 set visualbell			" Use visual bell instead of beeping
 set mouse=a			" Enable mouse use in all modes
 set autowrite			" Save the file when we switch buffers
+set number			" Show line numbers
 
 let mapleader=","
-inoremap jk <ESC>		" Map jk to ESC
+inoremap jk <ESC>
 nnoremap <leader>e :NERDTreeToggle<CR>
 
 " =========================
