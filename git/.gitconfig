@@ -12,6 +12,7 @@
 	b = branch
 	lo = log --oneline --decorate --graph
 	diffy = difftool --dir-diff -y
+	da = diffall
 
 [push]
 	default = simple
