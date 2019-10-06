@@ -6,6 +6,12 @@
 - [Oh My Zsh](https://ohmyz.sh/)
 - [Nord iTerm2](https://github.com/arcticicestudio/nord-iterm2)
 
+## Windows
+
+- [Scoop](https://scoop.sh)
+- [ConEmu](https://conemu.github.io/)
+- [Nord ConEmu](https://github.com/arcticicestudio/nord-conemu)
+
 ## Git
 
 ```sh
