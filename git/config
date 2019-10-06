@@ -4,12 +4,7 @@
 #     [include]
 #         path = C:/Users/Brian.Lachniet/.config/dotfiles-windows/git/config
 #
-# Follow that up with local configuration overrides. Consider setting the following in your local
-# Git configuration file after including this file:
-# - core.autocrlf
-# - diff.tool
-# - merge.tool
-# - user.signingkey
+# Follow that up with local configuration overrides.
 [user]
 	name = Brian Lachniet
 	email = blachniet@gmail.com
