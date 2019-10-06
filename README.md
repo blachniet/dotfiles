@@ -24,6 +24,16 @@ For example, you may want to set:
 - `user.email`
 - `user.signingkey`
 
+## PowerShell
+
+Add the following line to your `$PROFILE` to include the PowerShell
+customizations from
+[`PowerShell/blachniet.ps1`](./PowerShell/blachniet.ps1).
+
+```powershell
+. <path-to-dotfiles-repo>/PowerShell/blachniet.ps1
+```
+
 ## Visual Studio Code
 
 - User settings: [vscode/settings.json](./vscode/settings.json)
