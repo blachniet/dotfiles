@@ -30,8 +30,13 @@ Add the following line to your `$PROFILE` to include the PowerShell
 customizations from
 [`PowerShell/blachniet.ps1`](./PowerShell/blachniet.ps1).
 
+## Visual Studio
+
+Include [VsVim](https://marketplace.visualstudio.com/items?itemName=JaredParMSFT.VsVim)
+settings:
+
 ```powershell
-. <path-to-dotfiles-repo>/PowerShell/blachniet.ps1
+"source <path-to-dotfiles-repo>/VisualStudio/.vsvimrc" >> ~/.vsvimrc
 ```
 
 ## Visual Studio Code

@@ -1,0 +1,26 @@
+set incsearch			" Show next match while entering search
+set hlsearch			" Highlight search matches
+set ignorecase			" Ignore case in searches
+set smartcase			" Respect case when capital letters present
+set backspace=indent,eol,start	" Allow backspace over new lines
+
+" access system clipboard
+set clipboard=unnamed
+
+let mapleader=","
+inoremap jk <ESC>
+
+" Visual Studio shortcuts
+nnoremap gne :vsc View.NextError<CR>
+nnoremap go  :vsc View.Output<CR>
+nnoremap ge  :vsc View.ErrorList<CR>
+nnoremap gf  :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+nnoremap <leader>ba  :vsc Build.BuildSolution<CR>
+nnoremap <leader>bc  :vsc Build.BuildSelection<CR>
+nnoremap <leader>d   :vsc Debug.Start<CR>
+nnoremap <leader>D   :vsc Debug.StartWithoutDebugging<CR>
+nnoremap <leader>td  :vsc TestExplorer.DebugAllTestsInContext<CR>
+nnoremap <leader>tc  :vsc TestExplorer.RunAllTestsInContext<CR>
+nnoremap <leader>ta  :vsc TestExplorer.RunAllTests<CR>
+nnoremap <leader>tl  :vsc TestExplorer.RepeatLastRun<CR>
+
