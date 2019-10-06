@@ -1,0 +1,45 @@
+# Include these configuration settings with the following snippet at the top of your
+# ~/.gitconfig or ~/.config/git/config
+#
+#     [include]
+#         path = C:/Users/Brian.Lachniet/.config/dotfiles-windows/git/config
+#
+# Follow that up with local configuration overrides. Consider setting the following in your local
+# Git configuration file after including this file:
+# - core.autocrlf
+# - diff.tool
+# - merge.tool
+# - user.signingkey
+[user]
+	name = Brian Lachniet
+	email = blachniet@gmail.com
+[core]
+	editor = /usr/local/bin/vim
+[alias]
+	s = status --short
+	co = checkout
+	b = branch
+	lo = log --decorate --graph --date=relative --format='%C(auto)%h%d | %Cblue%ad%Creset | %Cblue%aN <%aE>%Creset%n%s%n%n%b%n'
+	loa = log --decorate --graph --date=relative --all --format='%C(auto)%h%d | %Cblue%ad%Creset | %Cblue%aN <%aE>%Creset%n%s%n%n%b%n'
+	lof = log --decorate --graph --format=fuller
+	lofa = log --decorate --graph --format=fuller --all
+	diffy = difftool --dir-diff -y
+	da = diffall
+	rbi = rebase --interactive --autosquash
+	rbc = rebase --continue
+[push]
+	default = simple
+[pull]
+	ff = only
+[difftool]
+	prompt = false
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "meld"]
+	cmd = 'C:/Program Files (x86)/Meld/Meld.exe' "$LOCAL" "$REMOTE"
+[difftool "bc3"]
+	path = C:/Program Files/Beyond Compare 4/bcomp.exe
+[merge]
+	ff = only
+[mergetool "bc3"]
+	path = C:/Program Files/Beyond Compare 4/bcomp.exe

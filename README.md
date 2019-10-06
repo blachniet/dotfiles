@@ -6,6 +6,24 @@
 - [Oh My Zsh](https://ohmyz.sh/)
 - [Nord iTerm2](https://github.com/arcticicestudio/nord-iterm2)
 
+## Git
+
+Include [`git/config`](./git/config) in your `~/.gitconfig` or `~/.config/git`:
+
+```
+[include]
+    path = <path-to-dotfiles-repo>/git/config
+```
+
+Then, set some system-specific settings and/or override defaults in your Git configuration file.
+For example, you may want to set:
+- `core.autocrlf`
+- `diff.tool`
+- `merge.tool`
+- `user.name`
+- `user.email`
+- `user.signingkey`
+
 ## Visual Studio Code
 
 - User settings: [vscode/settings.json](./vscode/settings.json)
