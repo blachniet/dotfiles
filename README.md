@@ -8,16 +8,14 @@
 
 ## Git
 
-Include [`git/config`](./git/config) in your `~/.gitconfig` or `~/.config/git`:
+```sh
+git config --global include.path <path-to-dotfiles-repo>/git/config
 
-```
-[include]
-    path = <path-to-dotfiles-repo>/git/config
+# Windows only
+git config --global core.autocrlf true
 ```
 
-Then, set some system-specific settings and/or override defaults in your Git configuration file.
-For example, you may want to set:
-- `core.autocrlf`
+Also consider setting:
 - `diff.tool`
 - `merge.tool`
 - `user.name`
@@ -26,9 +24,11 @@ For example, you may want to set:
 
 ## PowerShell
 
-Add the following line to your `$PROFILE` to include the PowerShell
-customizations from
-[`PowerShell/blachniet.ps1`](./PowerShell/blachniet.ps1).
+Include PowerShell customizations in your `$PROFILE`:
+
+```powershell
+". <path-to-dotfiles-repo>/PowerShell/blachniet.ps1" >> $PROFILE
+```
 
 ## Visual Studio
 
