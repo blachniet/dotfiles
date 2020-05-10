@@ -57,3 +57,13 @@ settings:
   - [Nord](https://marketplace.visualstudio.com/items?itemName=arcticicestudio.nord-visual-studio-code)
   - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
   - [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+
+## ZSH
+
+```sh
+cat <<EOF >> $HOME/.zshrc
+
+# Load customizations from shared dotfiles.
+source $(pwd)/zsh/shared.zsh
+EOF
+```
