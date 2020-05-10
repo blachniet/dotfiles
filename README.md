@@ -22,6 +22,7 @@ git config --global core.autocrlf true
 ```
 
 Also consider setting:
+
 - `diff.tool`
 - `merge.tool`
 - `user.name`
