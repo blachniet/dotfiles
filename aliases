@@ -1,0 +1,7 @@
+alias ll="ls -al"
+alias k="kubectl"
+
+# Include custom aliases
+if [[ -f ~/.aliases.local ]]; then
+  source ~/.aliases.local
+fi

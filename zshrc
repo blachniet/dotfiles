@@ -25,9 +25,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Kubernetes
-alias k="kubectl"
-
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -44,6 +41,9 @@ export PATH=$GOPATH/bin:$PATH
 
 # .NET
 export PATH=$HOME/.dotnet/tools:$PATH
-#
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
