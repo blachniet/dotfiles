@@ -1,0 +1,3 @@
+\setenv PSQL_EDITOR nvim
+\x auto
+\pset null '💩null💩'
