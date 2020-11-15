@@ -1,0 +1,3 @@
+# https://stackoverflow.com/a/55032706
+export GPG_TTY=$(tty)
+
