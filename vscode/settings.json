@@ -1,4 +1,19 @@
 {
+    "[html]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.tabSize": 2
+    },
+    "[vue]": {
+        "editor.tabSize": 2
+    },
+    "[yaml]": {
+        "editor.tabSize": 2,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
     "editor.fontSize": 14,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
@@ -17,10 +32,28 @@
             ]
         }
     ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "p"
+            ],
+            "commands": [
+                "go.test.package"
+            ]
+        }
+    ],
     "vim.leader": ",",
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.hlsearch": true,
     "vim.useSystemClipboard": true,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "git.autofetch": true,
+    "files.associations": {
+        "Vagrantfile": "ruby"
+    }
 }
