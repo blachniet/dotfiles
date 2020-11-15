@@ -13,7 +13,7 @@ Install these prerequisites first:
 1. Clone this repository.
 
    ```bash
-   git clone git@github.com:blachniet/dotfiles.git ~/.dotfiles
+   git clone git@github.com:blachniet/dotfiles.git
    ```
 
 1. Install [rcm](https://github.com/thoughtbot/rcm):
@@ -25,7 +25,7 @@ Install these prerequisites first:
 1. Install the dotfiles:
 
    ```bash
-   env RCRC=$HOME/.dotfiles/rcrc rcup
+   env RCRC=$HOME/dotfiles/rcrc rcup
    ```
 
 ## Windows
