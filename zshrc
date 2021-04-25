@@ -16,6 +16,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Starship theme - https://github.com/starship/starship
+# Must appear after sourcing oh-my-zsh.sh
+eval "$(starship init zsh)"
+
 # User configuration
 
 # Preferred editor for local and remote sessions
@@ -47,3 +51,4 @@ export PATH=$HOME/.dotnet/tools:$PATH
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
