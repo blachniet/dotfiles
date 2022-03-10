@@ -52,3 +52,5 @@ export PATH=$HOME/.dotnet/tools:$PATH
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
