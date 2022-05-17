@@ -6,11 +6,17 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'mileszs/ack.vim'
-	Plug 'preservim/nerdtree'
+
+	" File explorer
+	Plug 'kyazdani42/nvim-web-devicons'
+	Plug 'kyazdani42/nvim-tree.lua'
 
 	" Markdown
 	Plug 'godlygeek/tabular'
 	Plug 'preservim/vim-markdown'
+
+	" Discover more plugins here:
+	" https://github.com/rockerBOO/awesome-neovim
 call plug#end()
 
 set visualbell          " Use visual bell instead of beeping
@@ -42,14 +48,10 @@ set noexpandtab
 let mapleader = ","
 inoremap jk <ESC>
 nnoremap <C-p> :FZF<CR>
-nnoremap <Leader>e :NERDTreeToggle<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" NERDTree
-let g:NERDTreeWinPos = "right"
 
 " The Silver Searcher + ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -59,3 +61,14 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
+" nvim-tree
+nnoremap <Leader>e :NvimTreeToggle<CR>
+
+lua << EOF
+require'nvim-tree'.setup {
+	open_on_tab = true,
+	view = {
+		side = 'right'
+	}
+}
+EOF
