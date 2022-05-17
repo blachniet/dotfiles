@@ -7,16 +7,37 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'mileszs/ack.vim'
 	Plug 'preservim/nerdtree'
+
+	" Markdown
+	Plug 'godlygeek/tabular'
+	Plug 'preservim/vim-markdown'
 call plug#end()
 
-set ignorecase		" Ignore case in searches
-set smartcase		" Respect case when capital letters present
-set visualbell		" Use visual bell instead of beeping
-set mouse=a		" Enable mouse use in all modes
-set autowrite		" Save the file when we switch buffers
-set number		" Show line numbers
-set colorcolumn=80,100	" Column guides
-hi ColorColumn ctermbg=darkgrey guibg=darkgrey
+set visualbell          " Use visual bell instead of beeping
+set mouse=a             " Enable mouse use in all modes
+set autowrite           " Save the file when we switch buffers
+set number              " Show line numbers
+set colorcolumn=80,100  " Column guides
+highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+
+" Use the system clipbard
+set clipboard+=unnamedplus
+
+" Search
+set ignorecase  " Ignore case in searches
+set smartcase   " Respect case when capital letters present
+
+" Display
+set showmatch
+set scrolloff=3
+set conceallevel=2
+
+" Whitespace
+set autoindent
+set smartindent
+set tabstop=2
+set shiftwidth=0        " When 0, use tabstop value
+set noexpandtab
 
 let mapleader = ","
 inoremap jk <ESC>
@@ -32,4 +53,9 @@ let g:NERDTreeWinPos = "right"
 
 " The Silver Searcher + ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_conceal_code_blocks = 0
 
