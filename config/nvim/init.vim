@@ -36,7 +36,6 @@ set smartcase   " Respect case when capital letters present
 " Display
 set showmatch
 set scrolloff=3
-set conceallevel=2
 
 " Whitespace
 set autoindent
