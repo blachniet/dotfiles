@@ -1,26 +1,4 @@
 " ========================================
-" Plugins
-"
-" vim-plug
-" https://github.com/junegunn/vim-plug
-" Common commands: PlugInstall, PlugUpdate, PlugClean
-"
-" Discover more plugins here:
-" https://github.com/rockerBOO/awesome-neovim
-" ========================================
-call plug#begin(stdpath('data') . 'plugged')
-	Plug 'editorconfig/editorconfig-vim'
-	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'mileszs/ack.vim'
-	Plug 'kyazdani42/nvim-web-devicons' " File explorer icons
-	Plug 'kyazdani42/nvim-tree.lua'     " File explorer
-	Plug 'godlygeek/tabular'            " Required by vim-markdown
-	Plug 'preservim/vim-markdown'
-	Plug 'arcticicestudio/nord-vim'     " Nord color scheme
-call plug#end()
-
-" ========================================
 " General settings
 " ========================================
 set clipboard+=unnamedplus " Use the system clipbard
@@ -49,6 +27,28 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" ========================================
+" Plugins
+"
+" vim-plug
+" https://github.com/junegunn/vim-plug
+" Common commands: PlugInstall, PlugUpdate, PlugClean
+"
+" Discover more plugins here:
+" https://github.com/rockerBOO/awesome-neovim
+" ========================================
+call plug#begin(stdpath('data') . 'plugged')
+	Plug 'editorconfig/editorconfig-vim'
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'mileszs/ack.vim'
+	Plug 'kyazdani42/nvim-web-devicons' " File explorer icons
+	Plug 'kyazdani42/nvim-tree.lua'     " File explorer
+	Plug 'godlygeek/tabular'            " Required by vim-markdown
+	Plug 'preservim/vim-markdown'
+	Plug 'arcticicestudio/nord-vim'     " Nord color scheme
+call plug#end()
 
 " ========================================
 " Plugin settings
