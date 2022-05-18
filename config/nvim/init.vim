@@ -48,6 +48,8 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'godlygeek/tabular'            " Required by vim-markdown
 	Plug 'preservim/vim-markdown'
 	Plug 'arcticicestudio/nord-vim'     " Nord color scheme
+	Plug 'tpope/vim-fugitive'           " Git plugin
+	Plug 'vim-airline/vim-airline'      " Status/tabline
 call plug#end()
 
 " ========================================
