@@ -27,6 +27,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
 
 " ========================================
 " Plugins
@@ -57,8 +59,9 @@ call plug#end()
 " ========================================
 colorscheme nord
 
-" The Silver Searcher + ack.vim
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" ack.vim + ripgrep
+let g:ackprg = 'rg --hidden --smart-case --vimgrep'
+nnoremap <Leader>/ :Ack!<Space>
 
 " Markdown
 let g:vim_markdown_folding_disabled = 1
@@ -70,7 +73,6 @@ nnoremap <Leader>e :NvimTreeToggle<CR>
 
 lua << EOF
 require'nvim-tree'.setup {
-	open_on_tab = true,
 	view = {
 		side = 'right'
 	}
