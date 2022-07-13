@@ -55,6 +55,16 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'tpope/vim-fugitive'           " Git plugin
 	Plug 'vim-airline/vim-airline'      " Status/tabline
 	Plug 'EdenEast/nightfox.nvim'
+
+	" Completion
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+	Plug 'hrsh7th/cmp-vsnip'
+	Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
 " ========================================
@@ -80,4 +90,6 @@ require'nvim-tree'.setup {
 		side = 'right'
 	}
 }
+
+require('plugins/completion')
 EOF
