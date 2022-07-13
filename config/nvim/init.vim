@@ -16,12 +16,14 @@ set smartindent         " Indent logic for C-like programs
 set tabstop=2
 set shiftwidth=0        " When 0, use tabstop value
 set noexpandtab
+set termguicolors
 
 " ========================================
 " Key mappings
 " ========================================
 let mapleader = ","
 inoremap jk <ESC>
+inoremap <C-Space> <C-x><C-o>
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -52,12 +54,13 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'arcticicestudio/nord-vim'     " Nord color scheme
 	Plug 'tpope/vim-fugitive'           " Git plugin
 	Plug 'vim-airline/vim-airline'      " Status/tabline
+	Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 " ========================================
 " Plugin settings
 " ========================================
-colorscheme nord
+colorscheme nightfox
 
 " ack.vim + ripgrep
 let g:ackprg = 'rg --hidden --smart-case --vimgrep'
