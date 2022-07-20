@@ -53,8 +53,8 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'preservim/vim-markdown'
 	Plug 'arcticicestudio/nord-vim'     " Nord color scheme
 	Plug 'tpope/vim-fugitive'           " Git plugin
-	Plug 'vim-airline/vim-airline'      " Status/tabline
 	Plug 'EdenEast/nightfox.nvim'
+	Plug 'nvim-lualine/lualine.nvim'    " Statusline
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
@@ -90,6 +90,6 @@ require'nvim-tree'.setup {
 		side = 'right'
 	}
 }
-
+require('lualine').setup()
 require('plugins/completion')
 EOF
