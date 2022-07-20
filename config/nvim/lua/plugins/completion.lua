@@ -102,14 +102,13 @@ cmp.setup.cmdline(':', {
 })
 
 -- Setup lspconfig.
+local nvim_lsp = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-require('lspconfig')['eslint'].setup {
-	capabilities = capabilities,
-	on_attach = on_attach,
-	flags = lsp_flags,
-}
-require('lspconfig')['tsserver'].setup {
-	capabilities = capabilities,
-	on_attach = on_attach,
-	flags = lsp_flags,
-}
+local servers = {'eslint', 'gopls', 'tsserver'}
+for _, server in ipairs(servers) do
+	nvim_lsp[server].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		flags = lsp_flags,
+	})
+end
