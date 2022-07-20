@@ -55,6 +55,9 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'tpope/vim-fugitive'           " Git plugin
 	Plug 'EdenEast/nightfox.nvim'
 	Plug 'nvim-lualine/lualine.nvim'    " Statusline
+	Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
+	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
@@ -65,6 +68,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'hrsh7th/nvim-cmp'
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
+
 call plug#end()
 
 " ========================================
@@ -83,6 +87,13 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 " nvim-tree
 nnoremap <Leader>e :NvimTreeToggle<CR>
+
+" Telescope
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 lua << EOF
 require'nvim-tree'.setup {
