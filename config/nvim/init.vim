@@ -55,6 +55,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'tpope/vim-fugitive'           " Git plugin
 	Plug 'EdenEast/nightfox.nvim'
 	Plug 'nvim-lualine/lualine.nvim'    " Statusline
+	Plug 'romgrk/barbar.nvim'           " Tabline
 	Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
 	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
@@ -102,5 +103,6 @@ require'nvim-tree'.setup {
 	}
 }
 require('lualine').setup()
+require('plugins/barbar')
 require('plugins/completion')
 EOF
