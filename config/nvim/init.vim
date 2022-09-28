@@ -56,8 +56,9 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'EdenEast/nightfox.nvim'
 	Plug 'nvim-lualine/lualine.nvim'    " Statusline
 	Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
 	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+	Plug 'mattn/emmet-vim'
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
