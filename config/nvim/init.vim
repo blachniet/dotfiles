@@ -85,9 +85,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
-" nvim-tree
-nnoremap <Leader>e :NvimTreeToggle<CR>
-
 " Telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
@@ -96,11 +93,16 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 lua << EOF
+
+-- nvim-tree
 require'nvim-tree'.setup {
 	view = {
 		side = 'right'
 	}
 }
+vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>E', ':NvimTreeFindFile<CR>',  { noremap = true, silent = true })
+
 require('lualine').setup()
 require('plugins/completion')
 EOF
