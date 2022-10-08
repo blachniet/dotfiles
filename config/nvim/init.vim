@@ -118,23 +118,20 @@ require('telescope').setup{
 local telescope_builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', function()
 		telescope_builtin.find_files({
-			hidden = true, -- Show hidden files
+			find_command = {
+				'fd',
+				'--hidden',       -- Show hidden files
+				'--follow',       -- Follow symlinks
+				'--exclude=.git', -- Exclude the .git folder.
+			},
 		})
 	end, {
 	desc = 'Telescope find_files'
 })
-vim.keymap.set('n', '<leader>fo', telescope_builtin.oldfiles, {
-	desc = 'Telescope oldfiles'
-})
-vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {
-	desc = 'Telescope live_grep'
-})
-vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, {
-	desc = 'Telescope buffers'
-})
-vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, {
-	desc = 'Telescope help_tags'
-})
+vim.keymap.set('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>')
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
+vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
+vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 
 require('lualine').setup()
 require('plugins/completion')
