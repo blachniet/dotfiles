@@ -86,13 +86,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
-" Telescope
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
 lua << EOF
 
 -- nvim-tree
@@ -121,6 +114,27 @@ require('telescope').setup{
     }
   }
 }
+
+local telescope_builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', function()
+		telescope_builtin.find_files({
+			hidden = true, -- Show hidden files
+		})
+	end, {
+	desc = 'Telescope find_files'
+})
+vim.keymap.set('n', '<leader>fo', telescope_builtin.oldfiles, {
+	desc = 'Telescope oldfiles'
+})
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {
+	desc = 'Telescope live_grep'
+})
+vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, {
+	desc = 'Telescope buffers'
+})
+vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, {
+	desc = 'Telescope help_tags'
+})
 
 require('lualine').setup()
 require('plugins/completion')
