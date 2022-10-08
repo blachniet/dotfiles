@@ -104,6 +104,24 @@ require'nvim-tree'.setup {
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>',  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>E', ':NvimTreeFindFile<CR>',  { noremap = true, silent = true })
 
+-- Telescope
+require('telescope').setup{
+  defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+			-- ☝️ Everything above this line matches the default for Telescope.
+			'--hidden',     -- Include hidden files in searches.
+			'--glob=!.git', -- Ignore the .git directory
+    }
+  }
+}
+
 require('lualine').setup()
 require('plugins/completion')
 EOF
