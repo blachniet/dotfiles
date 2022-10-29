@@ -59,6 +59,8 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
 	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 	Plug 'mattn/emmet-vim'
+	Plug 'rust-lang/rust.vim'
+	Plug 'simrat39/rust-tools.nvim'
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
@@ -132,6 +134,30 @@ vim.keymap.set('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>')
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
+
+-- Rust
+vim.api.nvim_set_var('rustfmt_autosave', true)
+
+local rt = require("rust-tools")
+rt.setup({
+	server = {
+		on_attach = function(_, bufnr)
+			-- Hover actions
+			vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
+			-- Code action groups
+			vim.keymap.set("n", "<space>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
+
+			-- Adpated from my nvim-lspconfig mappings.
+			local bufopts = { noremap=true, silent=true, buffer=bufnr }
+			vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+			vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+			vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+			vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+		end,
+	},
+})
 
 require('lualine').setup()
 require('plugins/completion')

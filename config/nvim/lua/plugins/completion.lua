@@ -22,8 +22,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-	-- TODO: Key mapping conflict with window movement.
-  -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wl', function()
@@ -104,6 +103,10 @@ cmp.setup.cmdline(':', {
 -- Setup lspconfig.
 local nvim_lsp = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- rust_analyzer: Do not include this server here. It would conflict with the
+-- setup performed by simrat39/rust-tools.nvim.
+-- <https://github.com/simrat39/rust-tools.nvim>
 local servers = {'eslint', 'gopls', 'tsserver'}
 for _, server in ipairs(servers) do
 	nvim_lsp[server].setup({
