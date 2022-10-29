@@ -156,6 +156,13 @@ rt.setup({
 			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 			vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 		end,
+		settings = {
+			["rust-analyzer"] = {
+				checkOnSave = {
+					command = "clippy"
+				}
+			}
+		}
 	},
 })
 
