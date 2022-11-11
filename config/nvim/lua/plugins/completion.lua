@@ -102,7 +102,7 @@ cmp.setup.cmdline(':', {
 
 -- Setup lspconfig.
 local nvim_lsp = require("lspconfig")
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- rust_analyzer: Do not include this server here. It would conflict with the
 -- setup performed by simrat39/rust-tools.nvim.
