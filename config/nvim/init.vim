@@ -61,6 +61,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'mattn/emmet-vim'
 	Plug 'rust-lang/rust.vim'
 	Plug 'simrat39/rust-tools.nvim'
+	Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
