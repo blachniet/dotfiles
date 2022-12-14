@@ -91,6 +91,10 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 lua << EOF
 
+-- When text is wrapped, move up and down visually, unless a count is given.
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
+
 -- nvim-tree
 require'nvim-tree'.setup {
 	view = {
