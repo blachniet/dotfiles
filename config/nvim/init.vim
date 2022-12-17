@@ -51,6 +51,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'simrat39/rust-tools.nvim'
 	Plug 'simrat39/symbols-outline.nvim'
 	Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
+	Plug 'folke/trouble.nvim'
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
@@ -195,8 +196,16 @@ rt.setup({
 	},
 })
 
-require("symbols-outline").setup()
+require('symbols-outline').setup()
 vim.keymap.set('n', '<leader>so', ':SymbolsOutline<cr>')
+
+require('trouble').setup()
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", {silent = true})
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", {silent = true})
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", {silent = true})
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", {silent = true})
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", {silent = true})
+vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", {silent = true})
 
 require('lualine').setup()
 require('plugins/completion')
