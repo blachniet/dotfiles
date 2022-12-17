@@ -111,7 +111,7 @@ vim.keymap.set('n', '[q', ':cprevious<cr>')
 vim.keymap.set('n', '<c-p>', ':FZF<cr>')
 
 -- Edit and source $MYVIMRC.
-vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC<cr>')
+vim.keymap.set('n', '<leader>ev', ':split $MYVIMRC<cr>')
 vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<cr>')
 
 -- When text is wrapped, move up and down visually, unless a count is given.
