@@ -53,6 +53,8 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'preservim/vim-markdown'
 	Plug 'arcticicestudio/nord-vim'     " Nord color scheme
 	Plug 'tpope/vim-fugitive'           " Git plugin
+	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-repeat'
 	Plug 'EdenEast/nightfox.nvim'
 	Plug 'nvim-lualine/lualine.nvim'    " Statusline
 	Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
