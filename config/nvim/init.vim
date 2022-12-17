@@ -94,6 +94,10 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 lua << EOF
 
+-- Edit and source $MYVIMRC.
+vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC<cr>')
+vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<cr>')
+
 -- When text is wrapped, move up and down visually, unless a count is given.
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
