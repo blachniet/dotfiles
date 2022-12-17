@@ -63,6 +63,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'mattn/emmet-vim'
 	Plug 'rust-lang/rust.vim'
 	Plug 'simrat39/rust-tools.nvim'
+	Plug 'simrat39/symbols-outline.nvim'
 	Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
 
 	" Completion
@@ -172,6 +173,9 @@ rt.setup({
 		}
 	},
 })
+
+require("symbols-outline").setup()
+vim.keymap.set('n', '<leader>so', ':SymbolsOutline<cr>')
 
 require('lualine').setup()
 require('plugins/completion')
