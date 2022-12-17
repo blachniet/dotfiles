@@ -52,6 +52,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'simrat39/symbols-outline.nvim'
 	Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
 	Plug 'folke/trouble.nvim'
+	Plug 'vim-test/vim-test'
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
