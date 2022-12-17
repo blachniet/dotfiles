@@ -108,8 +108,8 @@ require'nvim-tree'.setup {
 		side = 'right'
 	}
 }
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>',  { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>E', ':NvimTreeFindFile<CR>',  { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>b', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>B', ':NvimTreeFindFile<CR>')
 
 -- Telescope
 require('telescope').setup{
