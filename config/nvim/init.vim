@@ -102,6 +102,10 @@ vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<cr>')
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
+-- Convert the current word to uppercase in insert mode.
+-- https://learnvimscriptthehardway.stevelosh.com/chapters/04.html
+vim.keymap.set('i', '<c-u>', '<esc>viwUea')
+
 -- nvim-tree
 require'nvim-tree'.setup {
 	view = {
