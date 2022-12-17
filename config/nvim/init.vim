@@ -41,6 +41,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'tpope/vim-fugitive'           " Git plugin
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-commentary'
 	Plug 'EdenEast/nightfox.nvim'
 	Plug 'nvim-lualine/lualine.nvim'    " Statusline
 	Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
