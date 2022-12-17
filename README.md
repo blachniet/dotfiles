@@ -78,3 +78,10 @@ settings:
   - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
   - [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 
+## Resources
+
+- [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
+- Neovim
+    - [nvim-lua-guide](https://github.com/nanotee/nvim-lua-guide)
+    - [jessarcher/dotfiles](https://github.com/jessarcher/dotfiles) - nvim
+
