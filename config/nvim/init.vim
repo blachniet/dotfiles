@@ -19,20 +19,6 @@ set noexpandtab
 set termguicolors
 
 " ========================================
-" Key mappings
-" ========================================
-let mapleader = ","
-inoremap jk <ESC>
-inoremap <C-Space> <C-x><C-o>
-nnoremap <C-p> :FZF<CR>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-nnoremap ]q :cnext<CR>
-nnoremap [q :cprevious<CR>
-
-" ========================================
 " Plugins
 "
 " vim-plug
@@ -93,6 +79,33 @@ let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
 lua << EOF
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
+
+-- Escape insert mode.
+vim.keymap.set('i', 'jk', '<esc>')
+
+-- Open autocomplete.
+vim.keymap.set('i', '<c-space>', '<c-x><c-o>')
+
+-- Navigate windows with Ctrl+j/k/l/h.
+vim.keymap.set('n', '<c-j>', '<c-w><c-j>')
+vim.keymap.set('n', '<c-k>', '<c-w><c-k>')
+vim.keymap.set('n', '<c-l>', '<c-w><c-l>')
+vim.keymap.set('n', '<c-h>', '<c-w><c-h>')
+
+-- Resize with arrows. <https://github.com/jessarcher/dotfiles>
+vim.keymap.set('n', '<a-up>', ':resize +2<cr>')
+vim.keymap.set('n', '<a-down>', ':resize -2<cr>')
+vim.keymap.set('n', '<a-left>', ':vertical resize -2<cr>')
+vim.keymap.set('n', '<a-right>', ':vertical resize +2<cr>')
+
+-- Navigate the quickfix list.
+vim.keymap.set('n', ']q', ':cnext<cr>')
+vim.keymap.set('n', '[q', ':cprevious<cr>')
+
+-- Open FZF.
+vim.keymap.set('n', '<c-p>', ':FZF<cr>')
 
 -- Edit and source $MYVIMRC.
 vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC<cr>')
