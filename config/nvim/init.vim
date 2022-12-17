@@ -54,6 +54,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
 	Plug 'folke/trouble.nvim'
 	Plug 'vim-test/vim-test'
+	Plug 'rafamadriz/friendly-snippets'
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
