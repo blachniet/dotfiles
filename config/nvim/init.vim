@@ -11,7 +11,6 @@ set ignorecase          " Ignore case in searches
 set smartcase           " Respect case when capital letters present
 set showmatch           " Jump to matching bracket on insert
 set scrolloff=3         " Keep lines above/below cursor when scrolling
-set autoindent          " Copy indent from current line to new line
 set smartindent         " Indent logic for C-like programs
 set tabstop=2
 set shiftwidth=0        " When 0, use tabstop value
