@@ -43,7 +43,6 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-commentary'
 	Plug 'EdenEast/nightfox.nvim'
-	Plug 'nvim-lualine/lualine.nvim'    " Statusline
 	Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
 	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
@@ -55,6 +54,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'folke/trouble.nvim'
 	Plug 'vim-test/vim-test'
 	Plug 'rafamadriz/friendly-snippets'
+	Plug 'feline-nvim/feline.nvim'
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
@@ -210,6 +210,8 @@ vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", {silent = tr
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", {silent = true})
 vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", {silent = true})
 
-require('lualine').setup()
+require('feline').setup()
+require('feline').winbar.setup()
+
 require('plugins/completion')
 EOF
