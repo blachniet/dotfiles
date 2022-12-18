@@ -73,10 +73,6 @@ call plug#end()
 " ========================================
 colorscheme nightfox
 
-" ack.vim + ripgrep
-let g:ackprg = 'rg --hidden --smart-case --vimgrep'
-nnoremap <Leader>/ :Ack!<Space>
-
 " Markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
@@ -122,6 +118,10 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 -- Convert the current word to uppercase in insert mode.
 -- https://learnvimscriptthehardway.stevelosh.com/chapters/04.html
 vim.keymap.set('i', '<c-u>', '<esc>viwUea')
+
+-- Use ripgrep with ack.vim.
+vim.g.ackprg = 'rg --hidden --smart-case --vimgrep'
+vim.keymap.set('n', '<leader>/', ':Ack!<space>')
 
 -- nvim-tree
 require'nvim-tree'.setup {
