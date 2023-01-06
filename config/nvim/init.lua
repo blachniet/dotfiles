@@ -1,4 +1,3 @@
-lua << EOF
 local function get_dirname(path)
   local last_slash_pos = (path:reverse()):find('[/\\]')
   return path:sub(1, -(last_slash_pos+1))
@@ -80,9 +79,9 @@ vim.g.vim_markdown_conceal_code_blocks = 0
 
 -- nvim-tree
 require'nvim-tree'.setup {
-	view = {
-		side = 'right'
-	}
+  view = {
+    side = 'right'
+  }
 }
 vim.keymap.set('n', '<leader>b', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<leader>B', ':NvimTreeFindFile<CR>')
@@ -98,25 +97,25 @@ require('telescope').setup{
       '--line-number',
       '--column',
       '--smart-case',
-			-- ☝️ Everything above this line matches the default for Telescope.
-			'--hidden',     -- Include hidden files in searches.
-			'--glob=!.git', -- Ignore the .git directory
+      -- ☝️ Everything above this line matches the default for Telescope.
+      '--hidden',     -- Include hidden files in searches.
+      '--glob=!.git', -- Ignore the .git directory
     }
   }
 }
 
 local telescope_builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', function()
-		telescope_builtin.find_files({
-			find_command = {
-				'fd',
-				'--hidden',       -- Show hidden files
-				'--follow',       -- Follow symlinks
-				'--exclude=.git', -- Exclude the .git folder.
-			},
-		})
-	end, {
-	desc = 'Telescope find_files'
+  telescope_builtin.find_files({
+    find_command = {
+      'fd',
+      '--hidden',       -- Show hidden files
+      '--follow',       -- Follow symlinks
+      '--exclude=.git', -- Exclude the .git folder.
+    },
+  })
+end, {
+desc = 'Telescope find_files'
 })
 vim.keymap.set('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>')
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
@@ -128,30 +127,30 @@ vim.api.nvim_set_var('rustfmt_autosave', true)
 
 local rt = require("rust-tools")
 rt.setup({
-	server = {
-		on_attach = function(_, bufnr)
-			-- Hover actions
-			vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
-			-- Code action groups
-			vim.keymap.set("n", "<space>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<space>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
 
-			-- Adpated from my nvim-lspconfig mappings.
-			local bufopts = { noremap=true, silent=true, buffer=bufnr }
-			vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-			vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-			vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-			vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-		end,
-		settings = {
-			["rust-analyzer"] = {
-				checkOnSave = {
-					command = "clippy"
-				}
-			}
-		}
-	},
+      -- Adpated from my nvim-lspconfig mappings.
+      local bufopts = { noremap=true, silent=true, buffer=bufnr }
+      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+      vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+      vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+      vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    end,
+    settings = {
+      ["rust-analyzer"] = {
+        checkOnSave = {
+          command = "clippy"
+        }
+      }
+    }
+  },
 })
 
 require('symbols-outline').setup()
@@ -169,4 +168,3 @@ require('feline').setup()
 require('feline').winbar.setup()
 
 require('plugins/completion')
-EOF
