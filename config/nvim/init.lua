@@ -13,19 +13,19 @@ vim.g.maplocalleader = ' '
 
 -- General settings
 vim.opt.clipboard:append('unnamedplus') -- Use the system clipbard
-vim.opt.visualbell = true      -- Use visual bell instead of beeping
-vim.opt.mouse = 'a'            -- Enable mouse use in all modes
-vim.opt.autowrite = true       -- Save the file when we switch buffers
-vim.opt.number = false         -- Hide line numbers
-vim.opt.colorcolumn = {80,100} -- Column guides
-vim.opt.ignorecase = true      -- Ignore case in searches
-vim.opt.smartcase = true       -- Respect case when capital letters present
-vim.opt.showmatch = true       -- Jump to matching bracket on insert
-vim.opt.scrolloff = 3          -- Keep lines above/below cursor when scrolling
-vim.opt.smartindent = true     -- Indent logic for C-like programs
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 0         -- When 0, use tabstop value
-vim.opt.expandtab = true
+vim.opt.visualbell    = true     -- Use visual bell instead of beeping
+vim.opt.mouse         = 'a'      -- Enable mouse use in all modes
+vim.opt.autowrite     = true     -- Save the file when we switch buffers
+vim.opt.number        = false    -- Hide line numbers
+vim.opt.colorcolumn   = {80,100} -- Column guides
+vim.opt.ignorecase    = true     -- Ignore case in searches
+vim.opt.smartcase     = true     -- Respect case when capital letters present
+vim.opt.showmatch     = true     -- Jump to matching bracket on insert
+vim.opt.scrolloff     = 3        -- Keep lines above/below cursor when scrolling
+vim.opt.smartindent   = true     -- Indent logic for C-like programs
+vim.opt.tabstop       = 2
+vim.opt.shiftwidth    = 0        -- When 0, use tabstop value
+vim.opt.expandtab     = true
 vim.opt.termguicolors = true
 
 -- Escape insert mode.

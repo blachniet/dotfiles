@@ -35,6 +35,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'vim-test/vim-test'
 	Plug 'rafamadriz/friendly-snippets'
 	Plug 'feline-nvim/feline.nvim'
+  Plug 'junegunn/vim-easy-align'
 
 	" Completion
 	Plug 'neovim/nvim-lspconfig'
