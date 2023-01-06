@@ -17,69 +17,18 @@ set shiftwidth=0        " When 0, use tabstop value
 set noexpandtab
 set termguicolors
 
-" ========================================
-" Plugins
-"
-" vim-plug
-" https://github.com/junegunn/vim-plug
-" Common commands: PlugInstall, PlugUpdate, PlugClean
-"
-" Discover more plugins here:
-" https://github.com/rockerBOO/awesome-neovim
-" ========================================
-call plug#begin(stdpath('data') . 'plugged')
-	Plug 'editorconfig/editorconfig-vim'
-	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'mileszs/ack.vim'
-	Plug 'kyazdani42/nvim-web-devicons' " File explorer icons
-	Plug 'kyazdani42/nvim-tree.lua'     " File explorer
-	Plug 'godlygeek/tabular'            " Required by vim-markdown
-	Plug 'preservim/vim-markdown'
-	Plug 'arcticicestudio/nord-vim'     " Nord color scheme
-	Plug 'tpope/vim-fugitive'           " Git plugin
-	Plug 'tpope/vim-surround'
-	Plug 'tpope/vim-repeat'
-	Plug 'tpope/vim-commentary'
-	Plug 'EdenEast/nightfox.nvim'
-	Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
-	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
-	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
-	Plug 'mattn/emmet-vim'
-	Plug 'rust-lang/rust.vim'
-	Plug 'simrat39/rust-tools.nvim'
-	Plug 'simrat39/symbols-outline.nvim'
-	Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
-	Plug 'folke/trouble.nvim'
-	Plug 'vim-test/vim-test'
-	Plug 'rafamadriz/friendly-snippets'
-	Plug 'feline-nvim/feline.nvim'
-
-	" Completion
-	Plug 'neovim/nvim-lspconfig'
-	Plug 'hrsh7th/cmp-nvim-lsp'
-	Plug 'hrsh7th/cmp-buffer'
-	Plug 'hrsh7th/cmp-path'
-	Plug 'hrsh7th/cmp-cmdline'
-	Plug 'hrsh7th/nvim-cmp'
-	Plug 'hrsh7th/cmp-vsnip'
-	Plug 'hrsh7th/vim-vsnip'
-
-call plug#end()
-
-" ========================================
-" Plugin settings
-" ========================================
-colorscheme nightfox
-
-" Markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_conceal_code_blocks = 0
-
 lua << EOF
+local function get_dirname(path)
+  local last_slash_pos = (path:reverse()):find('[/\\]')
+  return path:sub(1, -last_slash_pos)
+end
+
+vim.cmd('source ' .. get_dirname(os.getenv('MYVIMRC')) .. 'plugins.vim')
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+vim.cmd('colorscheme nightfox')
 
 -- Escape insert mode.
 vim.keymap.set('i', 'jk', '<esc>')
@@ -124,6 +73,11 @@ vim.keymap.set('i', '<c-u>', '<esc>viwUea')
 -- Use ripgrep with ack.vim.
 vim.g.ackprg = 'rg --hidden --smart-case --vimgrep'
 vim.keymap.set('n', '<leader>/', ':Ack!<space>')
+
+-- Markdown
+vim.g.vim_markdown_folding_disabled = 1
+vim.g.vim_markdown_toc_autofit = 1
+vim.g.vim_markdown_conceal_code_blocks = 0
 
 -- nvim-tree
 require'nvim-tree'.setup {
