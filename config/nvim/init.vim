@@ -1,34 +1,33 @@
-" ========================================
-" General settings
-" ========================================
-set clipboard+=unnamedplus " Use the system clipbard
-set visualbell          " Use visual bell instead of beeping
-set mouse=a             " Enable mouse use in all modes
-set autowrite           " Save the file when we switch buffers
-set nonumber            " Hide line numbers
-set colorcolumn=80,100  " Column guides
-set ignorecase          " Ignore case in searches
-set smartcase           " Respect case when capital letters present
-set showmatch           " Jump to matching bracket on insert
-set scrolloff=3         " Keep lines above/below cursor when scrolling
-set smartindent         " Indent logic for C-like programs
-set tabstop=2
-set shiftwidth=0        " When 0, use tabstop value
-set noexpandtab
-set termguicolors
-
 lua << EOF
 local function get_dirname(path)
   local last_slash_pos = (path:reverse()):find('[/\\]')
-  return path:sub(1, -last_slash_pos)
+  return path:sub(1, -(last_slash_pos+1))
 end
 
-vim.cmd('source ' .. get_dirname(os.getenv('MYVIMRC')) .. 'plugins.vim')
+-- Load the plugins
+vim.cmd('source ' .. get_dirname(os.getenv('MYVIMRC')) .. '/plugins.vim')
+
+vim.cmd('colorscheme nightfox')
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.cmd('colorscheme nightfox')
+-- General settings
+vim.opt.clipboard:append('unnamedplus') -- Use the system clipbard
+vim.opt.visualbell = true      -- Use visual bell instead of beeping
+vim.opt.mouse = 'a'            -- Enable mouse use in all modes
+vim.opt.autowrite = true       -- Save the file when we switch buffers
+vim.opt.number = false         -- Hide line numbers
+vim.opt.colorcolumn = {80,100} -- Column guides
+vim.opt.ignorecase = true      -- Ignore case in searches
+vim.opt.smartcase = true       -- Respect case when capital letters present
+vim.opt.showmatch = true       -- Jump to matching bracket on insert
+vim.opt.scrolloff = 3          -- Keep lines above/below cursor when scrolling
+vim.opt.smartindent = true     -- Indent logic for C-like programs
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 0         -- When 0, use tabstop value
+vim.opt.expandtab = true
+vim.opt.termguicolors = true
 
 -- Escape insert mode.
 vim.keymap.set('i', 'jk', '<esc>')
