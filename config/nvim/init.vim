@@ -78,8 +78,8 @@ let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
 lua << EOF
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Escape insert mode.
 vim.keymap.set('i', 'jk', '<esc>')
