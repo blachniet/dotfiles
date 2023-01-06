@@ -30,7 +30,7 @@ call plug#begin(stdpath('data') . 'plugged')
 	Plug 'rust-lang/rust.vim'
 	Plug 'simrat39/rust-tools.nvim'
 	Plug 'simrat39/symbols-outline.nvim'
-	Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
+	" Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
 	Plug 'folke/trouble.nvim'
 	Plug 'vim-test/vim-test'
 	Plug 'rafamadriz/friendly-snippets'
