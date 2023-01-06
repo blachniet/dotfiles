@@ -84,6 +84,9 @@ vim.g.maplocalleader = ' '
 -- Escape insert mode.
 vim.keymap.set('i', 'jk', '<esc>')
 
+-- Escape terminal-mode.
+vim.keymap.set('t', 'jk', '<C-\\><C-N>')
+
 -- Open autocomplete.
 vim.keymap.set('i', '<c-space>', '<c-x><c-o>')
 
