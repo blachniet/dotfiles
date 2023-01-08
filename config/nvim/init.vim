@@ -72,47 +72,47 @@ set shiftwidth=0           " When 0, use tabstop value
 set expandtab
 set termguicolors
 
+" Escape insert mode.
+inoremap jk <Esc>
+
+" Escape terminal-mode.
+tnoremap jk <C-\><C-n>
+
+" Open autocomplete.
+inoremap <C-Space> <C-x><C-o>
+
+" Navigate windows with Ctrl+j/k/l/h.
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+
+" Resize with arrows. <https://github.com/jessarcher/dotfiles>
+nnoremap <A-Up> :resize +2<CR>
+nnoremap <A-Down> :resize -2<CR>
+nnoremap <A-Left> :vertical resize -2<CR>
+nnoremap <A-Right> :vertical resize +2<CR>
+
+" Navigate the quickfix list.
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+
+" Open FZF.
+nnoremap <C-p> :FZF<CR>
+
+" Edit and source $MYVIMRC.
+nnoremap <Leader>ev :split $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" When text is wrapped, move up and down visually, unless a count is given.
+nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+
+" Convert the current word to uppercase in insert mode.
+" https://learnvimscriptthehardway.stevelosh.com/chapters/04.html
+inoremap <C-u> <Esc>viwUea
+
 lua <<EOF
-
--- Escape insert mode.
-vim.keymap.set('i', 'jk', '<esc>')
-
--- Escape terminal-mode.
-vim.keymap.set('t', 'jk', '<C-\\><C-N>')
-
--- Open autocomplete.
-vim.keymap.set('i', '<c-space>', '<c-x><c-o>')
-
--- Navigate windows with Ctrl+j/k/l/h.
-vim.keymap.set('n', '<c-j>', '<c-w><c-j>')
-vim.keymap.set('n', '<c-k>', '<c-w><c-k>')
-vim.keymap.set('n', '<c-l>', '<c-w><c-l>')
-vim.keymap.set('n', '<c-h>', '<c-w><c-h>')
-
--- Resize with arrows. <https://github.com/jessarcher/dotfiles>
-vim.keymap.set('n', '<a-up>', ':resize +2<cr>')
-vim.keymap.set('n', '<a-down>', ':resize -2<cr>')
-vim.keymap.set('n', '<a-left>', ':vertical resize -2<cr>')
-vim.keymap.set('n', '<a-right>', ':vertical resize +2<cr>')
-
--- Navigate the quickfix list.
-vim.keymap.set('n', ']q', ':cnext<cr>')
-vim.keymap.set('n', '[q', ':cprevious<cr>')
-
--- Open FZF.
-vim.keymap.set('n', '<c-p>', ':FZF<cr>')
-
--- Edit and source $MYVIMRC.
-vim.keymap.set('n', '<leader>ev', ':split $MYVIMRC<cr>')
-vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<cr>')
-
--- When text is wrapped, move up and down visually, unless a count is given.
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
-
--- Convert the current word to uppercase in insert mode.
--- https://learnvimscriptthehardway.stevelosh.com/chapters/04.html
-vim.keymap.set('i', '<c-u>', '<esc>viwUea')
 
 -- Use ripgrep with ack.vim.
 vim.g.ackprg = 'rg --hidden --smart-case --vimgrep'
