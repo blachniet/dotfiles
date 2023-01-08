@@ -52,8 +52,8 @@ call plug#end()
 colorscheme nightfox
 
 " Use the spacebar as the leader. It's easily accessible from either hand.
-let g:mapleader = ' '
-let g:maplocalleader = ' '
+let g:mapleader=' '
+let g:maplocalleader=' '
 
 " General settings
 set clipboard+=unnamedplus " Use the system clipbard
@@ -112,16 +112,25 @@ nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 " https://learnvimscriptthehardway.stevelosh.com/chapters/04.html
 inoremap <C-u> <Esc>viwUea
 
+" Abbreviations for common spelling errors.
+iabbrev fro for
+iabbrev teh the
+iabbrev tihs this
+
+" ========================================
+" Plugin Configuration
+" ========================================
+
+" Use ripgrep with ack.vim.
+let g:ackprg='rg --hidden --smart-case --vimgrep'
+nnoremap <Leader>/ :Ack!<Space>
+
+" Markdown
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_toc_autofit=1
+let g:vim_markdown_conceal_code_blocks=0
+
 lua <<EOF
-
--- Use ripgrep with ack.vim.
-vim.g.ackprg = 'rg --hidden --smart-case --vimgrep'
-vim.keymap.set('n', '<leader>/', ':Ack!<space>')
-
--- Markdown
-vim.g.vim_markdown_folding_disabled = 1
-vim.g.vim_markdown_toc_autofit = 1
-vim.g.vim_markdown_conceal_code_blocks = 0
 
 -- nvim-tree
 require'nvim-tree'.setup {
