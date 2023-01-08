@@ -152,9 +152,7 @@ require('telescope').setup{
     }
   }
 }
-EOF
 
-lua <<EOF
 local telescope_builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', function()
   telescope_builtin.find_files({
