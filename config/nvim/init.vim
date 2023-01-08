@@ -120,7 +120,7 @@ iabbrev tihs this
 " ========================================
 " Plugin Configuration
 " ========================================
-"
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
@@ -139,6 +139,18 @@ let g:vim_markdown_conceal_code_blocks=0
 lua require('nvim-tree').setup { view = { side = 'right' }}
 nnoremap <Leader>b <Cmd>NvimTreeToggle<CR>
 nnoremap <Leader>B <Cmd>NvimTreeFindFile<CR>
+
+" folke/trouble.nvim
+nnoremap <Leader>xx <Cmd>TroubleToggle<CR>
+nnoremap <Leader>xw <Cmd>TroubleToggle workspace_diagnostics<CR>
+nnoremap <Leader>xd <Cmd>TroubleToggle document_diagnostics<CR>
+nnoremap <Leader>xq <Cmd>TroubleToggle quickfix<CR>
+nnoremap <Leader>xl <Cmd>TroubleToggle loclist<CR>
+nnoremap gR <Cmd>TroubleToggle lsp_references<CR>
+
+" simrat39/symbols-outline.nvim
+lua require('symbols-outline').setup()
+nnoremap <Leader>so :SymbolsOutline<CR>
 
 lua <<EOF
 -- Telescope
@@ -177,7 +189,7 @@ vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 
--- Rust
+-- rust-lang/rust.vim
 vim.api.nvim_set_var('rustfmt_autosave', true)
 
 local rt = require("rust-tools")
@@ -208,19 +220,7 @@ rt.setup({
   },
 })
 
-require('symbols-outline').setup()
-vim.keymap.set('n', '<leader>so', ':SymbolsOutline<cr>')
-
-require('trouble').setup()
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", {silent = true})
-vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", {silent = true})
-vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", {silent = true})
-vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", {silent = true})
-vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", {silent = true})
-vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", {silent = true})
-
 require('feline').setup()
 require('feline').winbar.setup()
-
 require('plugins/completion')
 EOF
