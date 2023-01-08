@@ -130,17 +130,11 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_toc_autofit=1
 let g:vim_markdown_conceal_code_blocks=0
 
+lua require('nvim-tree').setup { view = { side = 'right' }}
+nnoremap <Leader>b <Cmd>NvimTreeToggle<CR>
+nnoremap <Leader>B <Cmd>NvimTreeFindFile<CR>
+
 lua <<EOF
-
--- nvim-tree
-require'nvim-tree'.setup {
-  view = {
-    side = 'right'
-  }
-}
-vim.keymap.set('n', '<leader>b', ':NvimTreeToggle<CR>')
-vim.keymap.set('n', '<leader>B', ':NvimTreeFindFile<CR>')
-
 -- Telescope
 require('telescope').setup{
   defaults = {
@@ -158,7 +152,9 @@ require('telescope').setup{
     }
   }
 }
+EOF
 
+lua <<EOF
 local telescope_builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', function()
   telescope_builtin.find_files({
