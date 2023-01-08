@@ -49,29 +49,30 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
+colorscheme nightfox
+
+" Use the spacebar as the leader. It's easily accessible from either hand.
+let g:mapleader = ' '
+let g:maplocalleader = ' '
+
+" General settings
+set clipboard+=unnamedplus " Use the system clipbard
+set visualbell             " Use visual bell instead of beeping
+set mouse=a                " Enable mouse use in all modes
+set autowrite              " Save the file when we switch buffers
+set nonumber               " Hide line numbers
+set colorcolumn=80,100,+0  " Column guides
+set ignorecase             " Ignore case in searches
+set smartcase              " Respect case when capital letters present
+set showmatch              " Jump to matching bracket on insert
+set scrolloff=3            " Keep lines above/below cursor when scrolling
+set smartindent            " Indent logic for C-like programs
+set tabstop=2
+set shiftwidth=0           " When 0, use tabstop value
+set expandtab
+set termguicolors
+
 lua <<EOF
-
-vim.cmd('colorscheme nightfox')
-
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- General settings
-vim.opt.clipboard:append('unnamedplus') -- Use the system clipbard
-vim.opt.visualbell    = true     -- Use visual bell instead of beeping
-vim.opt.mouse         = 'a'      -- Enable mouse use in all modes
-vim.opt.autowrite     = true     -- Save the file when we switch buffers
-vim.opt.number        = false    -- Hide line numbers
-vim.opt.colorcolumn   = {80,100} -- Column guides
-vim.opt.ignorecase    = true     -- Ignore case in searches
-vim.opt.smartcase     = true     -- Respect case when capital letters present
-vim.opt.showmatch     = true     -- Jump to matching bracket on insert
-vim.opt.scrolloff     = 3        -- Keep lines above/below cursor when scrolling
-vim.opt.smartindent   = true     -- Indent logic for C-like programs
-vim.opt.tabstop       = 2
-vim.opt.shiftwidth    = 0        -- When 0, use tabstop value
-vim.opt.expandtab     = true
-vim.opt.termguicolors = true
 
 -- Escape insert mode.
 vim.keymap.set('i', 'jk', '<esc>')
