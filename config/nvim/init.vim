@@ -37,6 +37,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'feline-nvim/feline.nvim'
   Plug 'junegunn/vim-easy-align'
   Plug 'lewis6991/gitsigns.nvim'
+  Plug 'kassio/neoterm'
 
   " Completion
   Plug 'neovim/nvim-lspconfig'
@@ -153,6 +154,7 @@ lua require('symbols-outline').setup()
 nnoremap <Leader>so :SymbolsOutline<CR>
 
 lua <<EOF
+
 -- Telescope
 require('telescope').setup{
   defaults = {
@@ -223,4 +225,5 @@ rt.setup({
 require('feline').setup()
 require('feline').winbar.setup()
 require('plugins/completion')
+
 EOF
