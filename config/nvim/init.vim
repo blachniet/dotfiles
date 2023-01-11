@@ -22,6 +22,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-unimpaired'
   Plug 'EdenEast/nightfox.nvim'
   Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
