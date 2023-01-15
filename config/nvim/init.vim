@@ -50,6 +50,12 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
+
+
+  if filereadable(stdpath('config') . '/plug.local.vim')
+    execute 'source ' . stdpath('config') . '/plug.local.vim'
+  endif
+
 call plug#end()
 
 colorscheme nightfox
@@ -229,3 +235,9 @@ require('feline').winbar.setup()
 require('plugins/completion')
 
 EOF
+
+
+" Local config
+if filereadable(stdpath('config') . '/init.local.vim')
+  execute 'source ' . stdpath('config') . '/init.local.vim'
+endif
