@@ -39,6 +39,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'kassio/neoterm'
+  Plug 'junegunn/vader.vim'
 
   " Completion
   Plug 'neovim/nvim-lspconfig'
