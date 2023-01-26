@@ -222,8 +222,9 @@ rt.setup({
     end,
     settings = {
       ["rust-analyzer"] = {
-        checkOnSave = {
-          command = "clippy"
+        check = {
+          command = "clippy",
+          extraArgs = { "--all", "--", "--warn", "clippy::all" },
         }
       }
     }
