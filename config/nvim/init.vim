@@ -102,6 +102,10 @@ nnoremap <A-Down> :resize -2<CR>
 nnoremap <A-Left> :vertical resize -2<CR>
 nnoremap <A-Right> :vertical resize +2<CR>
 
+" Expand '%%' to the buffer's current directory, on the command line.
+" From Practical Vim by Drew Neil.
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h') . '/' : '%%'
+
 " Navigate the quickfix list.
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
