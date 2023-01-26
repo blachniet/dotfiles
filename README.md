@@ -1,34 +1,10 @@
-# Brian Lachniet's dotfiles
+# blachniet's dotfiles for Windows
 
-## Mac
+These are blachniet's dotfiles for **Windows**.
 
-Install these prerequisites first:
+If you're looking for dotfiles for another OS, check out the other [branches](https://github.com/blachniet/dotfiles/branches).
 
-- [Homebrew](https://brew.sh/)
-- [Oh My Zsh](https://ohmyz.sh/)
-- [Nord iTerm2](https://github.com/arcticicestudio/nord-iterm2)
-
-## Get started with rcm
-
-1. Clone this repository.
-
-   ```bash
-   git clone git@github.com:blachniet/dotfiles.git
-   ```
-
-1. Install [rcm](https://github.com/thoughtbot/rcm):
-
-   ```bash
-   brew install rcm
-   ```
-
-1. Install the dotfiles:
-
-   ```bash
-   env RCRC=$HOME/dotfiles/rcrc rcup
-   ```
-
-## Windows
+## Tooling overview
 
 - [Scoop](https://scoop.sh)
 - [ConEmu](https://conemu.github.io/)
@@ -81,7 +57,3 @@ settings:
 ## Resources
 
 - [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
-- Neovim
-    - [nvim-lua-guide](https://github.com/nanotee/nvim-lua-guide)
-    - [jessarcher/dotfiles](https://github.com/jessarcher/dotfiles) - nvim
-
