@@ -80,6 +80,7 @@ set tabstop=2
 set shiftwidth=0           " When 0, use tabstop value
 set expandtab
 set termguicolors
+set linebreak
 
 " Escape insert mode.
 inoremap jk <Esc>
