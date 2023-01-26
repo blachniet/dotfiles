@@ -11,6 +11,7 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 - [iTerm2](https://iterm2.com/) as my terminal, with the [Nord](https://github.com/arcticicestudio/nord-iterm2) theme.
 - [Zsh](https://www.zsh.org/) or [fish](https://fishshell.com/) as my shell, depending on my mood.
 - [Neovim](https://neovim.io/) and [Visual Studio Code](https://code.visualstudio.com/) for text editing.
+- [vim-plug](https://github.com/junegunn/vim-plug) for managing Vim/Neovim plugins.
 
 ## Getting started
 
