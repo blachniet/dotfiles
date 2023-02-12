@@ -238,7 +238,8 @@ rt.setup({
 
 require('feline').setup()
 require('feline').winbar.setup()
-require('plugins/completion')
+require('plugins/cmp')
+require('plugins/lspconfig')
 
 EOF
 
