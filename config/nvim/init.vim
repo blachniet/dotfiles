@@ -166,20 +166,15 @@ nnoremap gR <Cmd>TroubleToggle lsp_references<CR>
 lua require('symbols-outline').setup()
 nnoremap <Leader>so :SymbolsOutline<CR>
 
-lua <<EOF
+" rust-lang/rust.vim
+let g:rustfmt_autosave = 1
 
--- rust-lang/rust.vim
-vim.api.nvim_set_var('rustfmt_autosave', true)
-
-require('feline').setup()
-require('feline').winbar.setup()
-require('plugins/cmp')
-require('plugins/lspconfig')
-require('plugins/rust-tools')
-require('plugins/telescope')
-
-EOF
-
+lua require('feline').setup()
+lua require('feline').winbar.setup()
+lua require('plugins/cmp')
+lua require('plugins/lspconfig')
+lua require('plugins/rust-tools')
+lua require('plugins/telescope')
 
 " Local config
 if filereadable(stdpath('config') . '/init.local.vim')
