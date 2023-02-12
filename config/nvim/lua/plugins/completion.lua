@@ -108,7 +108,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- rust_analyzer: Do not include this server here. It would conflict with the
 -- setup performed by simrat39/rust-tools.nvim.
 -- <https://github.com/simrat39/rust-tools.nvim>
-local servers = {'eslint', 'gopls', 'tsserver'}
+local servers = {'eslint', 'gopls', 'marksman', 'tsserver'}
 for _, server in ipairs(servers) do
 	nvim_lsp[server].setup({
 		capabilities = capabilities,
