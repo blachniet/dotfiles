@@ -162,6 +162,10 @@ nnoremap <Leader>xq <Cmd>TroubleToggle quickfix<CR>
 nnoremap <Leader>xl <Cmd>TroubleToggle loclist<CR>
 nnoremap gR <Cmd>TroubleToggle lsp_references<CR>
 
+" kassio/neoterm
+nnoremap <Leader>tss <Cmd>TREPLSendLine<CR>
+vnoremap <Leader>ts  <Cmd>TREPLSendSelection<CR>
+
 " simrat39/symbols-outline.nvim
 lua require('symbols-outline').setup()
 nnoremap <Leader>so :SymbolsOutline<CR>
@@ -174,7 +178,15 @@ lua require('feline').winbar.setup()
 lua require('plugins/cmp')
 lua require('plugins/lspconfig')
 lua require('plugins/rust-tools')
+
 lua require('plugins/telescope')
+nnoremap <Leader>fo  <Cmd>Telescope oldfiles<CR>
+nnoremap <Leader>fg  <Cmd>Telescope live_grep<CR>
+nnoremap <Leader>fb  <Cmd>Telescope buffers<CR>
+nnoremap <Leader>fh  <Cmd>Telescope help_tags<CR>
+nnoremap <Leader>fds <Cmd>Telescope lsp_document_symbols<CR>
+nnoremap <Leader>fs  <Cmd>Telescope lsp_dynamic_workspace_symbols<CR>
+nnoremap <Leader>ft  <Cmd>Telescope treesitter<CR>
 
 " Local config
 if filereadable(stdpath('config') . '/init.local.vim')

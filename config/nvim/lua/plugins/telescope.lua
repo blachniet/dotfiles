@@ -29,8 +29,4 @@ vim.keymap.set('n', '<leader>ff', function()
 end, {
 desc = 'Telescope find_files'
 })
-vim.keymap.set('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>')
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
-vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 
