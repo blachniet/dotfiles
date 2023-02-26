@@ -24,6 +24,8 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-unimpaired'
   Plug 'EdenEast/nightfox.nvim'
+  Plug 'rebelot/kanagawa.nvim'
+  Plug 'sainnhe/everforest'
   Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
   Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
@@ -35,11 +37,12 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'folke/trouble.nvim'
   Plug 'vim-test/vim-test'
   Plug 'rafamadriz/friendly-snippets'
-  Plug 'feline-nvim/feline.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'junegunn/vim-easy-align'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'kassio/neoterm'
   Plug 'junegunn/vader.vim'
+  Plug 'SmiteshP/nvim-navic'
 
   " Completion
   Plug 'neovim/nvim-lspconfig'
@@ -58,7 +61,7 @@ call plug#begin(stdpath('data') . 'plugged')
 
 call plug#end()
 
-colorscheme nightfox
+colorscheme kanagawa
 
 " Use the spacebar as the leader. It's easily accessible from either hand.
 let g:mapleader=' '
@@ -173,11 +176,10 @@ nnoremap <Leader>so :SymbolsOutline<CR>
 " rust-lang/rust.vim
 let g:rustfmt_autosave = 1
 
-lua require('feline').setup()
-lua require('feline').winbar.setup()
 lua require('plugins/cmp')
 lua require('plugins/lspconfig')
 lua require('plugins/rust-tools')
+lua require('plugins/lualine')
 
 lua require('plugins/telescope')
 nnoremap <Leader>fo  <Cmd>Telescope oldfiles<CR>
