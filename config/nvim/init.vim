@@ -17,15 +17,11 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'kyazdani42/nvim-tree.lua'     " File explorer
   Plug 'godlygeek/tabular'            " Required by vim-markdown
   Plug 'preservim/vim-markdown'
-  Plug 'arcticicestudio/nord-vim'     " Nord color scheme
   Plug 'tpope/vim-fugitive'           " Git plugin
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-unimpaired'
-  Plug 'EdenEast/nightfox.nvim'
-  Plug 'rebelot/kanagawa.nvim'
-  Plug 'sainnhe/everforest'
   Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
   Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
@@ -33,7 +29,6 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'rust-lang/rust.vim'
   Plug 'simrat39/rust-tools.nvim'
   Plug 'simrat39/symbols-outline.nvim'
-  " Plug 'junegunn/vim-peekaboo'        " 👀 " / @ / CTRL-R
   Plug 'folke/trouble.nvim'
   Plug 'vim-test/vim-test'
   Plug 'rafamadriz/friendly-snippets'
@@ -43,6 +38,12 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'kassio/neoterm'
   Plug 'junegunn/vader.vim'
   Plug 'SmiteshP/nvim-navic'
+
+  " Colorschemes
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'EdenEast/nightfox.nvim'
+  Plug 'rebelot/kanagawa.nvim'
+  Plug 'sainnhe/everforest'
 
   " Completion
   Plug 'neovim/nvim-lspconfig'
