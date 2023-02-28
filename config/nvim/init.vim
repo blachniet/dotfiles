@@ -62,8 +62,6 @@ call plug#begin(stdpath('data') . 'plugged')
 
 call plug#end()
 
-colorscheme kanagawa
-
 " Use the spacebar as the leader. It's easily accessible from either hand.
 let g:mapleader=' '
 let g:maplocalleader=' '
@@ -181,6 +179,7 @@ lua require('plugins/cmp')
 lua require('plugins/lspconfig')
 lua require('plugins/rust-tools')
 lua require('plugins/lualine')
+lua require('plugins/kanagawa')
 
 lua require('plugins/telescope')
 nnoremap <Leader>fo  <Cmd>Telescope oldfiles<CR>
@@ -190,6 +189,8 @@ nnoremap <Leader>fh  <Cmd>Telescope help_tags<CR>
 nnoremap <Leader>fds <Cmd>Telescope lsp_document_symbols<CR>
 nnoremap <Leader>fs  <Cmd>Telescope lsp_dynamic_workspace_symbols<CR>
 nnoremap <Leader>ft  <Cmd>Telescope treesitter<CR>
+
+colorscheme kanagawa
 
 " Local config
 if filereadable(stdpath('config') . '/init.local.vim')
