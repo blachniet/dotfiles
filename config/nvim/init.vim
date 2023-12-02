@@ -38,6 +38,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'kassio/neoterm'
   Plug 'junegunn/vader.vim'
   Plug 'SmiteshP/nvim-navic'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Colorschemes
   Plug 'arcticicestudio/nord-vim'
@@ -180,6 +181,7 @@ lua require('plugins/lspconfig')
 lua require('plugins/rust-tools')
 lua require('plugins/lualine')
 lua require('plugins/kanagawa')
+lua require('plugins/nvim-treesitter')
 
 lua require('plugins/telescope')
 nnoremap <Leader>fo  <Cmd>Telescope oldfiles<CR>
