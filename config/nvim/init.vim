@@ -17,6 +17,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'kyazdani42/nvim-tree.lua'     " File explorer
   Plug 'godlygeek/tabular'            " Required by vim-markdown
   Plug 'preservim/vim-markdown'
+  Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-fugitive'           " Git plugin
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
@@ -39,6 +40,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'junegunn/vader.vim'
   Plug 'SmiteshP/nvim-navic'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'jbyuki/venn.nvim'
 
   " Colorschemes
   Plug 'arcticicestudio/nord-vim'
