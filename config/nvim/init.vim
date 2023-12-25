@@ -151,9 +151,13 @@ let g:ackprg='rg --hidden --smart-case --vimgrep'
 nnoremap <Leader>/ :Ack!<Space>
 
 " Markdown
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_toc_autofit=1
-let g:vim_markdown_conceal_code_blocks=0
+let g:vim_markdown_folding_disabled    = 1
+let g:vim_markdown_toc_autofit         = 1
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_frontmatter         = 1
+let g:vim_markdown_toml_frontmatter    = 1
+let g:vim_markdown_json_frontmatter    = 1
+let g:vim_markdown_strikethrough       = 1
 
 lua require('nvim-tree').setup { view = { side = 'right' }}
 nnoremap <Leader>b <Cmd>NvimTreeToggle<CR>
