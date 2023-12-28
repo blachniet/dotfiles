@@ -11,7 +11,9 @@
 call plug#begin(stdpath('data') . 'plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  " Disable FZF to try using only Telescope instead.
+  " Also see commented section below for mappings.
+  " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'mileszs/ack.vim'
   Plug 'kyazdani42/nvim-web-devicons' " File explorer icons
   Plug 'kyazdani42/nvim-tree.lua'     " File explorer
@@ -118,8 +120,10 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h') . '/' : '%%'
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
 
-" Open FZF.
-nnoremap <C-p> :FZF<CR>
+" Disable FZF to try using only Telescope instead.
+" Also see commented section below for mappings.
+" " Open FZF.
+" nnoremap <C-p> :FZF<CR>
 
 " Edit and source $MYVIMRC.
 nnoremap <Leader>ev :split $MYVIMRC<CR>
