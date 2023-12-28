@@ -34,6 +34,8 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'vim-test/vim-test'
   Plug 'rafamadriz/friendly-snippets'
   Plug 'nvim-lualine/lualine.nvim'
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'kassio/neoterm'
@@ -181,6 +183,44 @@ nnoremap <Leader>so :SymbolsOutline<CR>
 
 " rust-lang/rust.vim
 let g:rustfmt_autosave = 1
+
+" goyo
+function! s:goyo_enter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  endif
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+lua << EOF
+  require('lualine').hide({
+    place = {'statusline', 'tabline', 'winbar'},
+    unhide = false,
+  })
+EOF
+endfunction
+
+function! s:goyo_leave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  endif
+  set showmode
+  set showcmd
+  set scrolloff=3
+  Limelight!
+lua << EOF
+  require('lualine').hide({
+    place = {'statusline', 'tabline', 'winbar'},
+    unhide = true,
+  })
+EOF
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 lua require('plugins/cmp')
 lua require('plugins/lspconfig')
