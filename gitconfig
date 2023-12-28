@@ -45,3 +45,5 @@
 
 [delta]
 	navigate = true
+
+# vim:filetype=gitconfig
