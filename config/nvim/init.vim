@@ -188,44 +188,6 @@ nnoremap <Leader>so :SymbolsOutline<CR>
 " rust-lang/rust.vim
 let g:rustfmt_autosave = 1
 
-" goyo
-function! s:goyo_enter()
-  if executable('tmux') && strlen($TMUX)
-    silent !tmux set status off
-    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-  endif
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  Limelight
-lua << EOF
-  require('lualine').hide({
-    place = {'statusline', 'tabline', 'winbar'},
-    unhide = false,
-  })
-EOF
-endfunction
-
-function! s:goyo_leave()
-  if executable('tmux') && strlen($TMUX)
-    silent !tmux set status on
-    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-  endif
-  set showmode
-  set showcmd
-  set scrolloff=3
-  Limelight!
-lua << EOF
-  require('lualine').hide({
-    place = {'statusline', 'tabline', 'winbar'},
-    unhide = true,
-  })
-EOF
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
 lua require('plugins/cmp')
 lua require('plugins/lspconfig')
 lua require('plugins/rust-tools')
@@ -243,6 +205,34 @@ nnoremap <Leader>fs  <Cmd>Telescope lsp_dynamic_workspace_symbols<CR>
 nnoremap <Leader>ft  <Cmd>Telescope treesitter<CR>
 
 colorscheme kanagawa
+
+" goyo
+function! s:goyo_enter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  endif
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+  lua require('lualine').hide()
+endfunction
+
+function! s:goyo_leave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  endif
+  set showmode
+  set showcmd
+  set scrolloff=3
+  Limelight!
+  lua require('lualine').hide({unhide=true})
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Local config
 if filereadable(stdpath('config') . '/init.local.vim')
