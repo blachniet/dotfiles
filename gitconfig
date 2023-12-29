@@ -1,3 +1,4 @@
+# vim:filetype=gitconfig
 [user]
 	name = Brian Lachniet
 	email = blachniet@gmail.com
@@ -46,4 +47,7 @@
 [delta]
 	navigate = true
 
-# vim:filetype=gitconfig
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
