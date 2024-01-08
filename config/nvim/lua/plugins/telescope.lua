@@ -30,3 +30,4 @@ end, {
 desc = 'Telescope find_files'
 })
 
+require('telescope').load_extension('fzf')

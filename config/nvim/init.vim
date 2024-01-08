@@ -28,6 +28,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
   Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'mattn/emmet-vim'
   Plug 'rust-lang/rust.vim'
   Plug 'simrat39/rust-tools.nvim'
@@ -43,7 +44,6 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'kassio/neoterm'
   Plug 'junegunn/vader.vim'
   Plug 'SmiteshP/nvim-navic'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'jbyuki/venn.nvim'
 
   " Colorschemes
