@@ -14,7 +14,6 @@ call plug#begin(stdpath('data') . 'plugged')
   " Disable FZF to try using only Telescope instead.
   " Also see commented section below for mappings.
   " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'mileszs/ack.vim'
   Plug 'kyazdani42/nvim-web-devicons' " File explorer icons
   Plug 'kyazdani42/nvim-tree.lua'     " File explorer
   Plug 'godlygeek/tabular'            " Required by vim-markdown
