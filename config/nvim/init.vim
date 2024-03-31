@@ -11,9 +11,6 @@
 call plug#begin(stdpath('data') . 'plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  " Disable FZF to try using only Telescope instead.
-  " Also see commented section below for mappings.
-  " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'nvim-tree/nvim-web-devicons' " File explorer icons
   Plug 'nvim-tree/nvim-tree.lua'     " File explorer
   Plug 'godlygeek/tabular'            " Required by vim-markdown
@@ -28,7 +25,6 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
   Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-  Plug 'mattn/emmet-vim'
   Plug 'rust-lang/rust.vim'
   Plug 'simrat39/rust-tools.nvim'
   Plug 'simrat39/symbols-outline.nvim'
@@ -61,6 +57,10 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
 
+  " Honorable mentions
+  " mileszs/ack.vim - Using Telescope live_grep instead.
+  " junegunn/fzf - Using Telescope find_file instead.
+  " mattn/emmet-vim - I guess I've just never needed this that much.
 
   if filereadable(stdpath('config') . '/plug.local.vim')
     execute 'source ' . stdpath('config') . '/plug.local.vim'
@@ -119,11 +119,6 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h') . '/' : '%%'
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
 
-" Disable FZF to try using only Telescope instead.
-" Also see commented section below for mappings.
-" " Open FZF.
-" nnoremap <C-p> :FZF<CR>
-
 " Edit and source $MYVIMRC.
 nnoremap <Leader>ev :split $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
@@ -150,10 +145,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" Use ripgrep with ack.vim.
-let g:ackprg='rg --hidden --smart-case --vimgrep'
-nnoremap <Leader>/ :Ack!<Space>
 
 " Markdown
 let g:vim_markdown_folding_disabled    = 1
