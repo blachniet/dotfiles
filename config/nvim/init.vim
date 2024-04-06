@@ -1,13 +1,6 @@
-" ========================================
-" Plugins
-"
-" vim-plug
-" https://github.com/junegunn/vim-plug
-" Common commands: PlugInstall, PlugUpdate, PlugClean
-"
-" Discover more plugins here:
-" https://github.com/rockerBOO/awesome-neovim
-" ========================================
+" vim:fileencoding=utf-8:foldmethod=marker:foldlevel=0
+
+" vim-plug {{{1
 call plug#begin(stdpath('data') . 'plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -69,6 +62,10 @@ call plug#begin(stdpath('data') . 'plugged')
   endif
 
 call plug#end()
+
+" vim config {{{1
+
+colorscheme kanagawa
 
 " Use the spacebar as the leader. It's easily accessible from either hand.
 let g:mapleader=' '
@@ -138,9 +135,7 @@ iabbrev fro for
 iabbrev teh the
 iabbrev tihs this
 
-" ========================================
-" Plugin Configuration
-" ========================================
+" plugin config {{{1
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -198,24 +193,6 @@ command Ex Oil
 command Sex split|Oil
 command Vex vsplit|Oil
 
-lua require('plugins/cmp')
-lua require('plugins/lspconfig')
-lua require('plugins/rust-tools')
-lua require('plugins/lualine')
-lua require('plugins/kanagawa')
-lua require('plugins/nvim-treesitter')
-
-lua require('plugins/telescope')
-nnoremap <Leader>fo  <Cmd>Telescope oldfiles<CR>
-nnoremap <Leader>fg  <Cmd>Telescope live_grep<CR>
-nnoremap <Leader>fb  <Cmd>Telescope buffers<CR>
-nnoremap <Leader>fh  <Cmd>Telescope help_tags<CR>
-nnoremap <Leader>fds <Cmd>Telescope lsp_document_symbols<CR>
-nnoremap <Leader>fs  <Cmd>Telescope lsp_dynamic_workspace_symbols<CR>
-nnoremap <Leader>ft  <Cmd>Telescope treesitter<CR>
-
-colorscheme kanagawa
-
 " goyo
 function! s:goyo_enter()
   if executable('tmux') && strlen($TMUX)
@@ -244,7 +221,24 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-" Local config
+" lua plugin modules {{{1
+lua require('plugins/cmp')
+lua require('plugins/lspconfig')
+lua require('plugins/rust-tools')
+lua require('plugins/lualine')
+lua require('plugins/kanagawa')
+lua require('plugins/nvim-treesitter')
+
+lua require('plugins/telescope')
+nnoremap <Leader>fo  <Cmd>Telescope oldfiles<CR>
+nnoremap <Leader>fg  <Cmd>Telescope live_grep<CR>
+nnoremap <Leader>fb  <Cmd>Telescope buffers<CR>
+nnoremap <Leader>fh  <Cmd>Telescope help_tags<CR>
+nnoremap <Leader>fds <Cmd>Telescope lsp_document_symbols<CR>
+nnoremap <Leader>fs  <Cmd>Telescope lsp_dynamic_workspace_symbols<CR>
+nnoremap <Leader>ft  <Cmd>Telescope treesitter<CR>
+
+" local config {{{1
 if filereadable(stdpath('config') . '/init.local.vim')
   execute 'source ' . stdpath('config') . '/init.local.vim'
 endif
