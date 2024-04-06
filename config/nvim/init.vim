@@ -11,8 +11,7 @@
 call plug#begin(stdpath('data') . 'plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  Plug 'nvim-tree/nvim-web-devicons' " File explorer icons
-  Plug 'nvim-tree/nvim-tree.lua'     " File explorer
+  Plug 'stevearc/oil.nvim'
   Plug 'godlygeek/tabular'            " Required by vim-markdown
   Plug 'preservim/vim-markdown'
   Plug 'tpope/vim-abolish'
@@ -62,6 +61,8 @@ call plug#begin(stdpath('data') . 'plugged')
   " mileszs/ack.vim - Using Telescope live_grep instead.
   " junegunn/fzf - Using Telescope find_file instead.
   " mattn/emmet-vim - I guess I've just never needed this that much.
+  " Plug 'nvim-tree/nvim-web-devicons' " File explorer icons
+  " Plug 'nvim-tree/nvim-tree.lua'     " File explorer
 
   if filereadable(stdpath('config') . '/plug.local.vim')
     execute 'source ' . stdpath('config') . '/plug.local.vim'
@@ -156,9 +157,9 @@ let g:vim_markdown_toml_frontmatter    = 1
 let g:vim_markdown_json_frontmatter    = 1
 let g:vim_markdown_strikethrough       = 1
 
-lua require('nvim-tree').setup { view = { side = 'right' }}
-nnoremap <Leader>b <Cmd>NvimTreeToggle<CR>
-nnoremap <Leader>B <Cmd>NvimTreeFindFile<CR>
+" lua require('nvim-tree').setup { view = { side = 'right' }}
+" nnoremap <Leader>b <Cmd>NvimTreeToggle<CR>
+" nnoremap <Leader>B <Cmd>NvimTreeFindFile<CR>
 
 " folke/trouble.nvim
 nnoremap <Leader>xx <Cmd>TroubleToggle<CR>
@@ -178,6 +179,24 @@ nnoremap <Leader>so :SymbolsOutline<CR>
 
 " rust-lang/rust.vim
 let g:rustfmt_autosave = 1
+
+lua << EOF
+  require('oil').setup({
+    columns = {
+      "icon",
+      "permissions",
+      "size",
+      "mtime",
+    },
+    view_options = {
+      show_hidden = true,
+    }
+  })
+EOF
+nnoremap - <Cmd>Oil<CR>
+command Ex Oil
+command Sex split|Oil
+command Vex vsplit|Oil
 
 lua require('plugins/cmp')
 lua require('plugins/lspconfig')
