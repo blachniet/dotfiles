@@ -167,6 +167,7 @@ nnoremap gR <Cmd>TroubleToggle lsp_references<CR>
 " kassio/neoterm
 nnoremap <Leader>tss <Cmd>TREPLSendLine<CR>
 vnoremap <Leader>ts  <Cmd>TREPLSendSelection<CR>
+let g:neoterm_automap_keys = '<Leader>tt'
 
 " simrat39/symbols-outline.nvim
 lua require('symbols-outline').setup()
