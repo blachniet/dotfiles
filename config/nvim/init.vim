@@ -40,6 +40,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'junegunn/vader.vim'
   Plug 'SmiteshP/nvim-navic'
   Plug 'jbyuki/venn.nvim'
+  Plug 'github/copilot.vim'
 
   " Colorschemes
   Plug 'arcticicestudio/nord-vim'
