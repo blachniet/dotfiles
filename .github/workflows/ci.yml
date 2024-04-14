@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master", "linux", "macos", "windows" ]
+  pull_request:
+    branches: [ "master", "linux", "macos", "windows" ]
+  schedule:
+  - cron: '24 3 3 * *'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Anchore Grype scan
+      uses: anchore/scan-action@v3
+      with:
+        path: "."
+
