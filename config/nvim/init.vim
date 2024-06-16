@@ -11,7 +11,6 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'tpope/vim-fugitive'           " Git plugin
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-unimpaired'
   Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
@@ -56,6 +55,7 @@ call plug#begin(stdpath('data') . 'plugged')
   " mattn/emmet-vim - I guess I've just never needed this that much.
   " Plug 'nvim-tree/nvim-web-devicons' " File explorer icons
   " Plug 'nvim-tree/nvim-tree.lua'     " File explorer
+  " Plug 'tpope/vim-commentary'        " Alt built-in to nvim v0.10
 
   if filereadable(stdpath('config') . '/plug.local.vim')
     execute 'source ' . stdpath('config') . '/plug.local.vim'
