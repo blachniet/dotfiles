@@ -10,7 +10,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-unimpaired'
-  Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim
+  Plug 'nvim-lua/plenary.nvim'        " Required by telescope.nvim and epwalsh/obsidian.nvim
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Required by telescope.nvim
   Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -30,6 +30,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'SmiteshP/nvim-navic'
   Plug 'jbyuki/venn.nvim'
   Plug 'github/copilot.vim'
+  Plug 'epwalsh/obsidian.nvim'
 
   " Colorschemes
   Plug 'arcticicestudio/nord-vim'
@@ -239,6 +240,22 @@ nnoremap <Leader>fh  <Cmd>Telescope help_tags<CR>
 nnoremap <Leader>fds <Cmd>Telescope lsp_document_symbols<CR>
 nnoremap <Leader>fs  <Cmd>Telescope lsp_dynamic_workspace_symbols<CR>
 nnoremap <Leader>ft  <Cmd>Telescope treesitter<CR>
+
+lua << EOF
+require('obsidian').setup({
+  workspaces = {
+    { name = 'personal', path = '~/Documents/Obsidian Vault' }
+  },
+  daily_notes = {
+    folder = "Journal",
+    template = "TDailyNote",
+  },
+  templates = {
+    folder = "Templates",
+  },
+  open_app_foreground = true,
+})
+EOF
 
 " local config {{{1
 if filereadable(stdpath('config') . '/init.local.vim')
