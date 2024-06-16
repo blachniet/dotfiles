@@ -12,10 +12,6 @@ require'nvim-treesitter.configs'.setup {
   -- List of parsers to ignore installing (or "all")
   ignore_install = {
     "javascript",
-    -- Use preservim/vim-markdown instead. It is more configurable. For
-    -- example, I can disable conceal on code fences, while still concealing
-    -- other syntax.
-    "markdown"
   },
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)

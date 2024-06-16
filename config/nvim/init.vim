@@ -5,8 +5,6 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'stevearc/oil.nvim'
-  Plug 'godlygeek/tabular'            " Required by vim-markdown
-  Plug 'preservim/vim-markdown'
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-fugitive'           " Git plugin
   Plug 'tpope/vim-surround'
@@ -50,12 +48,15 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'hrsh7th/vim-vsnip'
 
   " Honorable mentions
-  " mileszs/ack.vim - Using Telescope live_grep instead.
-  " junegunn/fzf - Using Telescope find_file instead.
-  " mattn/emmet-vim - I guess I've just never needed this that much.
-  " Plug 'nvim-tree/nvim-web-devicons' " File explorer icons
-  " Plug 'nvim-tree/nvim-tree.lua'     " File explorer
-  " Plug 'tpope/vim-commentary'        " Alt built-in to nvim v0.10
+  " mileszs/ack.vim                - Using Telescope live_grep instead.
+  " junegunn/fzf                   - Using Telescope find_file instead.
+  " mattn/emmet-vim                - Was installed for a long time but I never
+  "                                  used it.
+  " Plug 'nvim-tree/nvim-tree.lua' - Use oil.nvim instead and avoid the
+  "                                  project drawer!
+  " Plug 'tpope/vim-commentary'    - Alt built-in to nvim v0.10
+  " Plug 'preservim/vim-markdown'  - Use nvim-treesitter instead. The two
+  "                                  conflict with each other.
 
   if filereadable(stdpath('config') . '/plug.local.vim')
     execute 'source ' . stdpath('config') . '/plug.local.vim'
