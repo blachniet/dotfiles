@@ -1,6 +1,8 @@
 set -xg EDITOR nvim
 set -xg GPG_TTY (tty)
-set --path --prepend PATH $HOME/.local/bin/
+
+fish_add_path /opt/nvim/bin
+fish_add_path $HOME/.local/bin
 
 set -x KUBECONFIG $HOME/.kube/config
 for c in $HOME/.kube/config-*; set --path --append KUBECONFIG $c; end
