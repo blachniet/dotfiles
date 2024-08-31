@@ -4,9 +4,11 @@ set -ex
 
 apt-get -y update
 apt-get -y install \
+  age \
   bat build-essential \
   fd-find fish fzf \
   git gnupg \
+  pass \
   rcm ripgrep rng-tools
 
 # Use the fish shell by default
