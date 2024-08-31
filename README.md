@@ -21,7 +21,7 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 1.  Bootstrap.
 
     ```
-    source $HOME/.dotfiles/bootstrap-ubuntu.sh
+    $HOME/.dotfiles/bootstrap-ubuntu.sh
     ```
 
 1.  Install the dotfiles:
