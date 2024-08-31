@@ -24,7 +24,7 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
     RCRC=$HOME/.dotfiles/rcrc rcup -v
     ```
 
-1.  Generate or import a GPG keys.
+1.  Generate or import a GPG key.
 
     ```bash
     gpg --full-generate-key
@@ -45,7 +45,8 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 1.  Initialize or clone your password store.
 
     ```bash
-    pass init
+    gpg --list-secret-keys --keyid-format=long
+    pass init <gpg-key-id>
     pass git init
     # or
     git clone <password-store-repo> $HOME/.password-store
