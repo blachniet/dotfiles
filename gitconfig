@@ -1,7 +1,4 @@
 # vim:filetype=gitconfig
-[user]
-	name = Brian Lachniet
-	email = blachniet@gmail.com
 [core]
 	editor = /usr/local/bin/vim
 	pager = delta
