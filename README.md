@@ -6,6 +6,12 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 
 ## Getting started
 
+1.  Create an SSH key and add it to your GitHub account.
+
+    ```
+    ssh-keygen -t ed25519
+    ```
+
 1.  Clone this repository.
 
     ```bash
@@ -21,7 +27,7 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 1.  Install the dotfiles:
 
     ```bash
-    env RCRC=$HOME/.dotfiles/rcrc rcup -v
+    RCRC=$HOME/.dotfiles/rcrc rcup -v
     ```
 
 ## Resources
