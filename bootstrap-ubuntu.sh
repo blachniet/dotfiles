@@ -4,10 +4,10 @@ set -ex
 
 apt-get -y update
 apt-get -y install \
-  build-essential \
-  fish fzf \
+  bat build-essential \
+  fd-find fish fzf \
   git gnupg \
-  rcm rng-tools
+  rcm ripgrep rng-tools
 
 # Use the fish shell by default
 chsh -s /usr/bin/fish
