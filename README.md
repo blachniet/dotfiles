@@ -6,16 +6,10 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 
 ## Getting started
 
-1.  Create an SSH key and add it to your GitHub account.
-
-    ```
-    ssh-keygen -t ed25519
-    ```
-
 1.  Clone this repository.
 
     ```bash
-    git clone --branch linux git@github.com:blachniet/dotfiles.git $HOME/.dotfiles
+    git clone --branch linux https://github.com/blachniet/dotfiles.git $HOME/.dotfiles
     ```
 
 1.  Bootstrap.
@@ -28,6 +22,33 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 
     ```bash
     RCRC=$HOME/.dotfiles/rcrc rcup -v
+    ```
+
+1.  Generate or import a GPG keys.
+
+    ```bash
+    gpg --full-generate-key
+    # or
+    gpg --import my-private-key.asc
+    ```
+
+1.  Configure local Git author settings in `~/.gitconfig.local`.
+
+    ```ini
+    # $HOME/.gitconfig.local
+    [user]
+        name = Your Name
+        email = Your Email
+        signingkey = Your GPG Key ID
+    ```
+
+1.  Initialize or clone your password store.
+
+    ```bash
+    pass init
+    pass git init
+    # or
+    git clone <password-store-repo> $HOME/.password-store
     ```
 
 ## Resources
