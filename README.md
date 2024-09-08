@@ -6,16 +6,16 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 
 ## Getting started
 
+1. Install Git and rcm. This may vary depending on your package manager.
+
+    ```bash
+    sudo apt install git rcm
+    ```
+
 1.  Clone this repository.
 
     ```bash
     git clone --branch linux https://github.com/blachniet/dotfiles.git $HOME/.dotfiles
-    ```
-
-1.  Bootstrap.
-
-    ```
-    $HOME/.dotfiles/bootstrap-ubuntu.sh
     ```
 
 1.  Install the dotfiles:
@@ -23,6 +23,8 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
     ```bash
     RCRC=$HOME/.dotfiles/rcrc rcup -v
     ```
+
+## Next steps
 
 1.  Generate or import a GPG key.
 

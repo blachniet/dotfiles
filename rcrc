@@ -1,3 +1,3 @@
-EXCLUDES="README*.md bootstrap-*.sh"
+EXCLUDES="README*.md vscode/*"
 DOTFILES_DIRS="$HOME/.dotfiles-local $HOME/.dotfiles"
 
