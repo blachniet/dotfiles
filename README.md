@@ -26,33 +26,61 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 
 ## Next steps
 
-1.  Generate or import a GPG key.
+### Install software
 
-    ```bash
-    gpg --full-generate-key
-    # or
-    gpg --import my-private-key.asc
-    ```
+Install software using your preferred package manager. The specific steps here vary by distribution and environment.
 
-1.  Configure local Git author settings in `~/.gitconfig.local`.
+When choosing how to install software, consider the following:
 
-    ```ini
-    # $HOME/.gitconfig.local
-    [user]
-        name = Your Name
-        email = Your Email
-        signingkey = Your GPG Key ID
-    ```
+- Is this installation method officially supported by the software vendor?
+- Does this installation method make it easy to keep the software up-to-date?
 
-1.  Initialize or clone your password store.
+Below is software to consider installing.
 
-    ```bash
-    gpg --list-secret-keys --keyid-format=long
-    pass init <gpg-key-id>
-    pass git init
-    # or
-    git clone <password-store-repo> $HOME/.password-store
-    ```
+- age: A simple, modern, and secure file encryption tool
+- bat: A cat(1) clone with wings
+- delta: A viewer for git and diff output
+- fd: A simple, fast, and user-friendly alternative to find
+- fish: A smart and user-friendly command line shell
+- fzf: A command-line fuzzy finder
+- gnupg: GNU Privacy Guard
+- neovim: Vim-fork focused on extensibility and usability
+- pass: A simple password manager
+- ripgrep: A line-oriented search tool that recursively searches your current directory for a regex pattern
+- rng-tools: Daemon to use hardware random number generators
+
+### GPG
+
+Create or import a GPG key.
+
+```bash
+gpg --full-generate-key
+# or
+gpg --import my-private-key.asc
+```
+
+### Git
+
+Create a `$HOME/.gitconfig.local` file with your Git user information.
+
+```ini
+[user]
+    name = Your Name
+    email = Your Email
+    signingkey = Your GPG Key ID
+```
+
+### pass
+
+Initialize or clone your password store.
+
+```bash
+gpg --list-secret-keys --keyid-format=long
+pass init <gpg-key-id>
+pass git init
+# or
+git clone <password-store-repo> $HOME/.password-store
+```
 
 ## Resources
 
