@@ -27,13 +27,13 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 
     ```bash
     cd ~
-    git clone --branch macos git@github.com:blachniet/dotfiles.git
+    git clone --branch macos git@github.com:blachniet/dotfiles.git $HOME/.dotfiles
     ```
 
 1.  Install the dotfiles:
 
     ```bash
-    env RCRC=$HOME/dotfiles/rcrc rcup
+    env RCRC=$HOME/.dotfiles/rcrc rcup
     ```
 
 ## Resources
