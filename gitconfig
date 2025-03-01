@@ -1,4 +1,4 @@
-# vim:filetype=gitconfig
+# vim:filetype=gitconfig:noexpandtab
 [core]
 	editor = /usr/local/bin/vim
 	pager = delta
@@ -8,6 +8,7 @@
 	s = status --short
 	co = checkout
 	b = branch
+	bc = branch --show-current
 	lo = log --decorate --graph --date=relative --format='%C(auto)%h%d | %Cblue%ad%Creset | %Cblue%aN <%aE>%Creset%n%s%n%n%b%n'
 	loa = log --decorate --graph --date=relative --all --format='%C(auto)%h%d | %Cblue%ad%Creset | %Cblue%aN <%aE>%Creset%n%s%n%n%b%n'
 	lof = log --decorate --graph --format=fuller
@@ -17,11 +18,17 @@
 	rbi = rebase --interactive --autosquash
 	rbc = rebase --continue
 [push]
-	default = simple
+	default         = simple
+	autoSetupRemote = true # No more need to --set-upstream (-u) manually.
+	followTags      = true # Always push tags too.
 [pull]
-	ff = only
+	ff     = only
+	rebase = true  # I'm fully in the rebase camp.
 [diff]
-	colorMoved = default
+	algorithm      = histogram
+	colorMoved     = plain
+	mnemonicPrefix = true
+	renames        = true
 [difftool]
 	prompt = false
 [difftool "vscode"]
@@ -31,8 +38,8 @@
 [difftool "bc3"]
 	path = C:/Program Files/Beyond Compare 4/bcomp.exe
 [merge]
-	ff = only
-	conflictstyle = diff3
+	ff            = only
+	conflictstyle = zdiff3
 [mergetool "bc3"]
 	path = C:/Program Files/Beyond Compare 4/bcomp.exe
 [include]
@@ -45,6 +52,27 @@
 	navigate = true
 
 [commit]
-	gpgsign = true
+	gpgsign = true  # Set user.signingkey in ~/.gitconfig.local
+	verbose = true  # Include diff it commit message editor.
 [tag]
-	gpgSign = true
+	gpgSign = true            # Set user.signingkey in ~/.gitconfig.local
+	sort    = version:refname # Sort version numbers intelligently.
+[column]
+	ui = auto  # Show branches, tags, etc. in a column view.
+[branch]
+	sort = -committerdate  # Show branches with most recent activity first.
+[fetch]
+	prune     = true  # Always do some cleanup.
+	pruneTags = true  # Cleanup tags too.
+	all       = true  # Fetch from all remotes by default.
+[help]
+	autocorrect = prompt
+[rerere]
+	# Reuse Recorded Resolution
+	# <https://blog.gitbutler.com/git-tips-1-theres-a-git-config-for-that/#reuse-recorded-resolution>
+	enabled    = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash  = true
+	updateRefs = true  # Automatically update branches that point to rebased commits.
