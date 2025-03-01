@@ -11,6 +11,7 @@
 	s = status --short
 	co = checkout
 	b = branch
+	bc = branch --show-current
 	lo = log --decorate --graph --date=relative --format='%C(auto)%h%d | %Cblue%ad%Creset | %Cblue%aN <%aE>%Creset%n%s%n%n%b%n'
 	loa = log --decorate --graph --date=relative --all --format='%C(auto)%h%d | %Cblue%ad%Creset | %Cblue%aN <%aE>%Creset%n%s%n%n%b%n'
 	lof = log --decorate --graph --format=fuller
