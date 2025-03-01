@@ -1,6 +1,5 @@
 # vim:filetype=gitconfig:noexpandtab
 [core]
-	editor = /usr/local/bin/vim
 	pager = delta
 [interactive]
 	diffFilter = delta --color-only
@@ -36,8 +35,6 @@
 [merge]
 	ff            = only
 	conflictstyle = zdiff3
-[include]
-  path = ~/.gitconfig.local
 [init]
 	defaultBranch = master
 [delta]
@@ -67,3 +64,6 @@
 	autoSquash = true
 	autoStash  = true
 	updateRefs = true  # Automatically update branches that point to rebased commits.
+
+[include]
+	path = ~/.gitconfig.local
