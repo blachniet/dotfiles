@@ -1,6 +1,5 @@
 # vim:filetype=gitconfig:noexpandtab
 [core]
-	editor = /usr/local/bin/vim
 	pager = delta
 [interactive]
 	diffFilter = delta --color-only
@@ -33,24 +32,13 @@
 	prompt = false
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
-[difftool "meld"]
-	cmd = 'C:/Program Files (x86)/Meld/Meld.exe' "$LOCAL" "$REMOTE"
-[difftool "bc3"]
-	path = C:/Program Files/Beyond Compare 4/bcomp.exe
 [merge]
 	ff            = only
 	conflictstyle = zdiff3
-[mergetool "bc3"]
-	path = C:/Program Files/Beyond Compare 4/bcomp.exe
-[include]
-  path = ~/.gitconfig.local
-
 [init]
 	defaultBranch = master
-
 [delta]
 	navigate = true
-
 [commit]
 	gpgsign = true  # Set user.signingkey in ~/.gitconfig.local
 	verbose = true  # Include diff it commit message editor.
@@ -76,3 +64,6 @@
 	autoSquash = true
 	autoStash  = true
 	updateRefs = true  # Automatically update branches that point to rebased commits.
+
+[include]
+	path = ~/.gitconfig.local
