@@ -41,20 +41,25 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>fk', vim.lsp.buf.format, bufopts)
 end
 
-local lsp_flags = {}
-
--- Setup lspconfig.
-local nvim_lsp = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- Set default configurations for all language servers
+vim.lsp.config('*', {
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- rust_analyzer: Do not include this server here. It would conflict with the
 -- setup performed by simrat39/rust-tools.nvim.
 -- <https://github.com/simrat39/rust-tools.nvim>
-local servers = {'eslint', 'gopls', 'marksman', 'terraformls', 'ts_ls'}
+local servers = {
+  'eslint',
+  'gopls',
+  'marksman',
+  'terraformls',
+  'ts_ls',
+}
+
 for _, server in ipairs(servers) do
-	nvim_lsp[server].setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		flags = lsp_flags,
-	})
+  vim.lsp.enable(server)
 end
