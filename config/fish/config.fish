@@ -10,8 +10,9 @@ if status is-interactive
   starship init fish | source
   atuin init fish | source
 
-  ## FZF
-  #set -xg FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-  #set -xg FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
-
+  # FZF
+  # Show hidden files, exclude .git directory, and follow symlinks
+  set -x FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+  set -x FZF_CTRL_R_COMMAND # Don't use fzf for command history
+  fzf --fish | source
 end
