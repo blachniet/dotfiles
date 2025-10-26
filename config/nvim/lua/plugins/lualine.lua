@@ -27,7 +27,11 @@ require('lualine').setup({
     lualine_a = {},
     lualine_b = {filename},
     lualine_c = {
-      { navic.get_location, cond = navic.is_available },
+      {
+        'navic',
+        color_correction = nil,
+        navic_opts = nil,
+      },
     },
     lualine_x = {'branch'},
     lualine_y = {},
