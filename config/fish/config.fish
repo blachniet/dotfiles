@@ -13,6 +13,9 @@ if status is-interactive
   atuin init fish | source
   fnm env --use-on-cd --shell fish | source
 
+  # Go
+  set --path --append PATH (go env GOPATH)/bin
+
   # FZF
   # Show hidden files, exclude .git directory, and follow symlinks
   set -x FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
