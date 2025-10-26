@@ -16,7 +16,6 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'rust-lang/rust.vim'
   Plug 'simrat39/rust-tools.nvim'
-  Plug 'simrat39/symbols-outline.nvim'
   Plug 'folke/trouble.nvim'
   Plug 'vim-test/vim-test'
   Plug 'rafamadriz/friendly-snippets'
@@ -58,6 +57,7 @@ call plug#begin(stdpath('data') . 'plugged')
   " Plug 'tpope/vim-commentary'    - Alt built-in to nvim v0.10
   " Plug 'preservim/vim-markdown'  - Use nvim-treesitter instead. The two
   "                                  conflict with each other.
+  " Plug 'simrat39/symbols-outline.nvim' - Project archived.
 
   if filereadable(stdpath('config') . '/plug.local.vim')
     execute 'source ' . stdpath('config') . '/plug.local.vim'
@@ -173,8 +173,8 @@ vnoremap <Leader>ts  <Cmd>TREPLSendSelection<CR>
 let g:neoterm_automap_keys = '<Leader>tt'
 
 " simrat39/symbols-outline.nvim
-lua require('symbols-outline').setup()
-nnoremap <Leader>so :SymbolsOutline<CR>
+"lua require('symbols-outline').setup()
+"nnoremap <Leader>so :SymbolsOutline<CR>
 
 " rust-lang/rust.vim
 let g:rustfmt_autosave = 1
