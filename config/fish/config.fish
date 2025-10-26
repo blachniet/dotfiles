@@ -9,6 +9,7 @@ if status is-interactive
 
   starship init fish | source
   atuin init fish | source
+  fnm env --use-on-cd --shell fish | source
 
   # FZF
   # Show hidden files, exclude .git directory, and follow symlinks
