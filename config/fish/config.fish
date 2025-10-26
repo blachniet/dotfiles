@@ -7,6 +7,7 @@ for c in $HOME/.kube/config-*; set --path --append KUBECONFIG $c; end
 
 if status is-interactive
 
+  /opt/homebrew/bin/brew shellenv | source
   starship init fish | source
   atuin init fish | source
   fnm env --use-on-cd --shell fish | source
