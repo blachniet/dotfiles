@@ -15,7 +15,7 @@ call plug#begin(stdpath('data') . 'plugged')
   Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'rust-lang/rust.vim'
-  Plug 'simrat39/rust-tools.nvim'
+  Plug 'mrcjkb/rustaceanvim'
   Plug 'folke/trouble.nvim'
   Plug 'vim-test/vim-test'
   Plug 'rafamadriz/friendly-snippets'
@@ -228,7 +228,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " lua plugin modules {{{1
 lua require('plugins/cmp')
 lua require('plugins/lspconfig')
-lua require('plugins/rust-tools')
 lua require('plugins/lualine')
 lua require('plugins/kanagawa')
 lua require('plugins/nvim-treesitter')
