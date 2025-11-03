@@ -3,7 +3,7 @@ if test (uname) = Darwin
 end
 
 if test (uname) = Linux
-  /home/linuxbrew/.linuxbrew/bin/brew shellenv
+  /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 end
 
 fish_add_path -g ~/.local/bin
