@@ -3,5 +3,6 @@ if status is-interactive
   atuin init fish | source
   fnm env --use-on-cd --shell fish | source
   fzf --fish | source
+  zoxide init fish | source
 end
 
