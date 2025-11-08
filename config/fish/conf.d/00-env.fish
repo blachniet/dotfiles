@@ -1,8 +1,8 @@
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
-set -gx PAGER LESS
-set -gx LESS '-R -F -X'
+set -gx PAGER less
+set -gx less '-R -F -X'
 
 set -gx GPG_TTY (tty) # Ensure GPG can prompt for passphrases
 
