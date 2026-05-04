@@ -8,8 +8,7 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 
 - [Homebrew](https://brew.sh/) for installing and updating software.
 - [rcm](https://thoughtbot.github.io/rcm/) for managing dotfiles.
-- [iTerm2](https://iterm2.com/) as my terminal, with the [Nord](https://github.com/arcticicestudio/nord-iterm2) theme.
-- [Zsh](https://www.zsh.org/) or [fish](https://fishshell.com/) as my shell, depending on my mood.
+- [fish](https://fishshell.com/) as my interactive shell.
 - [Neovim](https://neovim.io/) and [Visual Studio Code](https://code.visualstudio.com/) for text editing.
 
 ## Getting started
