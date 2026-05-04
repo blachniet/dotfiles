@@ -85,6 +85,10 @@ nnoremap [q :cprevious<CR>
 nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
 nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 
+" Open and source vimrc (Vim-specific paths)
+nnoremap <Leader>ev :split $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+
 " Abbreviations for common spelling errors.
 iabbrev fro for
 iabbrev teh the
