@@ -25,7 +25,10 @@ set sidescroll=1
 set smarttab
 set ttyfast
 set wildmenu
-set wildoptions=pum,tagfile " Approximate Neovim default (Vim 8.2+)
+if exists('+wildoptions')
+  set wildoptions=tagfile
+  silent! set wildoptions+=pum
+endif
 
 " General settings
 set clipboard+=unnamedplus " Use the system clipbard
