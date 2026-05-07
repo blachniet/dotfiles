@@ -49,7 +49,11 @@ if has('termguicolors')
   set termguicolors
 endif
 
-colorscheme habamax
+try
+  colorscheme habamax
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme slate
+endtry
 
 " Escape insert mode.
 inoremap jk <Esc>
