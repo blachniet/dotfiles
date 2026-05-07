@@ -18,7 +18,7 @@ return {
   },
   
   -- Git
-  'lewis6991/gitsigns.nvim',
+  { 'lewis6991/gitsigns.nvim', opts = {} },
 
   -- Testing
   'vim-test/vim-test',
