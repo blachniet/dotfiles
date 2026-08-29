@@ -44,7 +44,19 @@ return {{
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "folke/snacks.nvim", -- for input provider snacks
     "echasnovski/mini.icons",
-    -- "zbirenbaum/copilot.lua", -- for providers='copilot'
+    {
+      -- Backs avante's "copilot" provider. Suggestion/panel are disabled
+      -- since we only want it as an LLM backend here, not inline completion.
+      "zbirenbaum/copilot.lua",
+      cmd = "Copilot",
+      event = "InsertEnter",
+      config = function()
+        require("copilot").setup({
+          suggestion = { enabled = false },
+          panel = { enabled = false },
+        })
+      end,
+    },
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
