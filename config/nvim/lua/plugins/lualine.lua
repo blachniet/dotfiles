@@ -33,37 +33,43 @@ return {
         end,
       }
 
+      -- Avante's sidebar is made of several small unnamed scratch windows.
+      -- Disable winbar on these to reduce clutter.
+      local avante_filetypes = { 'Avante', 'AvanteInput', 'AvanteSelectedCode', 'AvanteSelectedFiles', 'AvanteTodos' }
+
       require('lualine').setup({
         options = {
           section_separators   = '',
           component_separators = '',
+          disabled_filetypes = {
+            winbar = avante_filetypes,
+          },
         },
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { filename },
-          lualine_c = { 'diff', 'diagnostics' },
+          lualine_c = { 'branch', 'diff', 'diagnostics' },
           lualine_x = { encoding, fileformat, 'filetype' },
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
         },
         winbar = {
-          lualine_a = {},
-          lualine_b = { filename },
           lualine_c = {
             {
               'navic',
               color_correction = nil,
               navic_opts        = nil,
+              cond = function()
+                return require('nvim-navic').is_available()
+              end,
             },
           },
-          lualine_x = { 'branch' },
-          lualine_y = {},
-          lualine_z = {},
         },
         extensions = {
           'fugitive',
           'oil',
           'quickfix',
+          'avante',
         },
       })
     end,

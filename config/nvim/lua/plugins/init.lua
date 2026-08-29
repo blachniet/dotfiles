@@ -72,7 +72,4 @@ return {
       end, desc = 'Toggle Venn' },
     },
   },
-
-  -- AI completion
-  'github/copilot.vim',
 }
