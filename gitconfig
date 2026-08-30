@@ -40,10 +40,10 @@
 [delta]
 	navigate = true
 [commit]
-	gpgsign = true  # Set user.signingkey in ~/.gitconfig.local
+	gpgsign = true
 	verbose = true  # Include diff it commit message editor.
 [tag]
-	gpgSign = true            # Set user.signingkey in ~/.gitconfig.local
+	gpgsign = true
 	sort    = version:refname # Sort version numbers intelligently.
 [column]
 	ui = auto  # Show branches, tags, etc. in a column view.
@@ -64,6 +64,12 @@
 	autoSquash = true
 	autoStash  = true
 	updateRefs = true  # Automatically update branches that point to rebased commits.
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[user]
+	signingkey = ~/.ssh/id_ed25519.pub
 
 [include]
 	path = ~/.gitconfig.local
