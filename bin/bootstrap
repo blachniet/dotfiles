@@ -15,7 +15,7 @@ echo "==> Installing Homebrew packages..."
 brew bundle --file="$DOTFILES_DIR/Brewfile"
 
 echo "==> Updating/installing dotfiles with rcm..."
-RCRC=$DOTFILES_DIR/rcrc rcup
+RCRC=$DOTFILES_DIR/rcrc rcup -v
 
 if command -v code &>/dev/null; then
   echo "==> Installing VS Code extensions..."
