@@ -1,0 +1,5 @@
+font-size = 14
+
+macos-titlebar-style = tabs
+
+keybind = shift+enter=text:\x1b\r # Toggle split zoom
