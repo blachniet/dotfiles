@@ -21,3 +21,8 @@ if command -v code &>/dev/null; then
   echo "==> Installing VS Code extensions..."
   code --install-extension vscodevim.vim --force
 fi
+
+echo "==> Setting press-and-hold for VS Code..."
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code
+
+echo "==> Done."
