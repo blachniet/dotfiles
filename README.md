@@ -4,34 +4,19 @@ These are blachniet's dotfiles for **macOS**.
 
 If you're looking for dotfiles for another OS, check out the other [branches](https://github.com/blachniet/dotfiles/branches).
 
-## Tooling overview
-
-- [Homebrew](https://brew.sh/) for installing and updating software.
-- [rcm](https://thoughtbot.github.io/rcm/) for managing dotfiles.
-- [fish](https://fishshell.com/) as my interactive shell.
-- [Neovim](https://neovim.io/) and [Visual Studio Code](https://code.visualstudio.com/) for text editing.
-
 ## Getting started
-
-1.  Install [Homebrew](https://brew.sh/).
-
-1.  Install rcm.
-
-    ```sh
-    brew install rcm
-    ```
 
 1.  Clone this repository.
 
     ```bash
-    cd ~
     git clone --branch macos git@github.com:blachniet/dotfiles.git $HOME/.dotfiles
     ```
 
-1.  Install the dotfiles:
+1.  Bootstrap
 
     ```bash
-    env RCRC=$HOME/.dotfiles/rcrc rcup
+    cd $HOME/.dotfiles
+    ./bin/bootstrap
     ```
 
 ## Resources
@@ -39,4 +24,5 @@ If you're looking for dotfiles for another OS, check out the other [branches](ht
 - [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
 - Neovim
     - [jessarcher/dotfiles](https://github.com/jessarcher/dotfiles) - nvim
+- [baweaver/dotfiles](https://github.com/baweaver)
 
