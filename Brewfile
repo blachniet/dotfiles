@@ -28,6 +28,7 @@ brew "dashlane/tap/dashlane-cli"
 tap "hashicorp/tap"
 brew "hashicorp/tap/vault"
 
+cask "claude-code"
 cask "font-fira-code-nerd-font"
 cask "google-chrome"
 cask "visual-studio-code"
