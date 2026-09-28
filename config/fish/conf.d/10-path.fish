@@ -7,5 +7,4 @@ if test (uname) = Linux
 end
 
 fish_add_path -g ~/.local/bin
-fish_add_path -g $GOPATH/bin
 fish_add_path -g $CARGO_HOME/bin
